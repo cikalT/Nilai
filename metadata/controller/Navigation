@@ -1,0 +1,150 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Navigation",
+        "requires": [
+            "Ext.util.History"
+        ]
+    },
+    "designerId": "02e19093-9c6b-4222-8b96-2632f82d7303",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": [
+                    "",
+                    "/**",
+                    "* The following code implements simple navigation by",
+                    "* using the URL hash (#) to indicate the active view",
+                    "*",
+                    "* The following values are always equal",
+                    "* hash = menuItem.itemId = (panel.itemId + 'Panel')",
+                    "*/",
+                    "",
+                    "// Init the Ext history utility",
+                    "Ext.History.init();",
+                    "",
+                    "// Navigate on hash change",
+                    "Ext.History.on('change', this.navigate, this);",
+                    "",
+                    "// Navigate if initial hash is provided",
+                    "this.navigate(window.location.hash);",
+                    "",
+                    "//value",
+                    "Ext.Ajax.request({",
+                    "    url: 'api/home/dataHome.php',",
+                    "    success: function(response) {",
+                    "        console.log(response.responseText);",
+                    "        response = Ext.decode(response.responseText);",
+                    "        var jmlhKelas = response.ValueKelas_;",
+                    "        var jmlhJur = response.ValueJur_;",
+                    "        var jmlhMapel =  response.ValueMapel_;",
+                    "        var jmlhSiswa = response.ValueSiswa_;",
+                    "",
+                    "        Ext.ComponentQuery.query('#txtValueKelas')[0].setText(jmlhKelas);",
+                    "        Ext.ComponentQuery.query('#txtValueJurusan')[0].setText(jmlhJur);",
+                    "        Ext.ComponentQuery.query('#txtValueMapel')[0].setText(jmlhMapel);",
+                    "        Ext.ComponentQuery.query('#txtValueSiswa')[0].setText(jmlhSiswa);",
+                    "    }",
+                    "});",
+                    "",
+                    "//chart",
+                    "// Ext.getStore('StoreChartHome').load();",
+                    "Ext.getStore('StoreChartColumn').load();",
+                    "Ext.getStore('StoreChartPie').load();",
+                    "Ext.getStore('JsonStoreMapel').load();"
+                ]
+            },
+            "name": "onLaunch",
+            "designerId": "87ba2aab-4c6c-4582-a261-5c0f0fb1fac8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "navigate",
+                "implHandler": [
+                    "\r",
+                    "// id may be a hash\r",
+                    "if (id) {\r",
+                    "\r",
+                    "    // Remove # from id if present\r",
+                    "    if (id[0] == '#') id = id.slice(1);\r",
+                    "\r",
+                    "    // Set active view\r",
+                    "    this.getContentPanel().layout.setActiveItem(id + 'Panel');\r",
+                    "\r",
+                    "    // Set menu and page title\r",
+                    "    // Iterate through each menu item\r",
+                    "    this.getMenu().items.each(function(item) {\r",
+                    "\r",
+                    "        // Active\r",
+                    "        if (item.href == '#' + id) {\r",
+                    "            // Disable\r",
+                    "            item.disable();\r",
+                    "            // Set page title to menu item text\r",
+                    "            window.document.title = item.text;\r",
+                    "        }\r",
+                    "\r",
+                    "        // Inactive\r",
+                    "        else {\r",
+                    "            item.enable();\r",
+                    "        }\r",
+                    "\r",
+                    "    });\r",
+                    "\r",
+                    "}\r",
+                    ""
+                ]
+            },
+            "name": "navigate",
+            "designerId": "010efca5-ac49-4bce-9f68-0ddca6bee936"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contentPanel",
+                "selector": "#contentPanel"
+            },
+            "name": "contentPanel",
+            "designerId": "e376e823-b564-494d-ae35-b5c93c355ea7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "menu",
+                "selector": "#menu"
+            },
+            "name": "menu",
+            "designerId": "05e6a1be-1582-4095-bda5-53b46fb3a33e"
+        }
+    ]
+}

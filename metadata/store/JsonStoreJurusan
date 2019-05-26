@@ -1,0 +1,51 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JsonStoreJurusan",
+        "model": "modelJurusan",
+        "storeId": "JsonStoreJurusan"
+    },
+    "name": "MyJsonStore",
+    "designerId": "c1c27b51-a0cf-412f-a25d-23c2a7600c3c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/jurusan/dataJurusan.php'",
+                    "}"
+                ],
+                "designer|displayName": "AjaxProxyJurusan"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "06dfff3c-2111-4322-9daf-832efd76d5a2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderJurusan",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "727068bf-e6f2-4b1d-ba58-65e998ea73c2"
+                }
+            ]
+        }
+    ]
+}

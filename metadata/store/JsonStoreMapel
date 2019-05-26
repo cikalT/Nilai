@@ -1,0 +1,51 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JsonStoreMapel",
+        "model": "modelMapel",
+        "storeId": "JsonStoreMapel"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bb265bb5-225e-4ad7-9234-50cca81458c2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/mapel/dataMapel.php'",
+                    "}"
+                ],
+                "designer|displayName": "AjaxProxyMapel"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "441bbce1-3364-4b09-be91-f5306dcd667b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderMapel",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "24ad69fb-9b66-46a9-bc14-1cdfc4b20b12"
+                }
+            ]
+        }
+    ]
+}

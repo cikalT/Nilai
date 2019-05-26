@@ -1,0 +1,246 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "kelasController"
+    },
+    "name": "MyController",
+    "designerId": "8731f8f0-7536-4cf8-97b3-517f9f50260b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#kelasjurPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "Ext.getStore('JsonStoreKelas').load();\t"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onPanelShow",
+            "designerId": "2f692118-5356-4df9-824c-ba1c65598ef9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTambahKelas",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTambahKelas",
+                "implHandler": [
+                    "Ext.widget('window_kelas').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnTambahKelas",
+            "designerId": "a66b9bf4-d12e-40d5-950c-bd023392918d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEditKelas",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditKelas",
+                "implHandler": [
+                    "var win = Ext.widget('window_kelas').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelKelas')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnEditKelas",
+            "designerId": "06eb93d3-ab89-4ab7-af16-8160556aa0e7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowKelasSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowKelasSimpan",
+                "implHandler": [
+                    "    var win = button.up('window');",
+                    "    var form = win.down('form');",
+                    "",
+                    "    if(form.isValid()) {",
+                    "        form.submit({",
+                    "        url:'api/kelas/simpanKelas.php',",
+                    "        success:function(a, response){",
+                    "            console.log(a);",
+                    "            console.log(response);",
+                    "            win.close();",
+                    "            Ext.MessageBox.show({",
+                    "                        title:\"Berhasil\",",
+                    "                        msg:response.result.message,",
+                    "                        icon:Ext.MessageBox.INFO",
+                    "                    });",
+                    "",
+                    "            Ext.ComponentQuery.query('#tabelKelas')[0].getSelectionModel().clearSelections();",
+                    "            Ext.ComponentQuery.query('#btnEditKelas')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnHapusKelas')[0].setDisabled(true);",
+                    "            Ext.getStore('JsonStoreKelas').load();",
+                    "//             Ext.Ajax.request({",
+                    "//                 url: 'api/siswa/jumlahSiswa.php',",
+                    "//                 success: function(response) {",
+                    "//                     console.log(response.responseText);",
+                    "//                     response = Ext.decode(response.responseText);",
+                    "//                     console.log(response.message);",
+                    "//                     var jumlah = response.message;",
+                    "//                     Ext.ComponentQuery.query(\"#bykSiswa\")[0].setText(jumlah);",
+                    "//                 }",
+                    "//             });",
+                    "        },",
+                    "        failure:function(a, response) {",
+                    "            //console.log(\"gagal\");",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Gagal\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "    }",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowKelasSimpan",
+            "designerId": "e0d8bb1b-baeb-4b78-911c-8ad7a9455166"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnHapusKelas",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnHapusKelas",
+                "implHandler": [
+                    "var hapus = function(btn) {",
+                    "    if(btn == 'yes'){",
+                    "        var grid = Ext.ComponentQuery.query('#tabelKelas')[0];",
+                    "        var selection = grid.getSelectionModel().getSelection()[0];",
+                    "        var id = selection.get('IDKelas_');",
+                    "",
+                    "        if(selection) {",
+                    "            Ext.Ajax.request({",
+                    "                url:'api/kelas/hapusKelas.php',",
+                    "                params:{",
+                    "                    IDKelas_:id",
+                    "                },",
+                    "                success:function(response, opts) {",
+                    "                    response = Ext.decode(response.responseText);",
+                    "                    if(response.success){",
+                    "                        Ext.ComponentQuery.query('#tabelKelas')[0].getSelectionModel().clearSelections();",
+                    "                        Ext.ComponentQuery.query('#btnEditKelas')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnHapusKelas')[0].setDisabled(true);",
+                    "                        Ext.getStore('JsonStoreKelas').load();",
+                    "                    }else{",
+                    "                         Ext.MessageBox.show({",
+                    "                             title:'Peringatan',",
+                    "                             msg:response.message,",
+                    "                             buttons:Ext.MessageBox.OK,",
+                    "                             icon:Ext.MessageBox.INFO",
+                    "                         });",
+                    "                    }",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "};",
+                    "Ext.MessageBox.show({",
+                    "    title:'Peringatan hapus',",
+                    "    msg:\"Apa yakin?\",",
+                    "    buttons: Ext.MessageBox.YESNO,",
+                    "    icon:Ext.MessageBox.QUESTION,",
+                    "    fn:hapus",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnHapusKelas",
+            "designerId": "d258022b-e386-40ff-845b-3a6f7b9f53dd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowKelasBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowKelasBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowKelasBatal",
+            "designerId": "110b3174-46ce-44d3-b320-953453a91158"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabelKelas",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelSelectionChange",
+                "implHandler": [
+                    "    Ext.ComponentQuery.query('#btnEditKelas')[0].setDisabled(false);",
+                    "    Ext.ComponentQuery.query('#btnHapusKelas')[0].setDisabled(false);",
+                    "",
+                    "    Ext.ComponentQuery.query('#tabelJurusan')[0].getSelectionModel().clearSelections();",
+                    "    Ext.ComponentQuery.query('#btnEditJurusan')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnHapusJurusan')[0].setDisabled(true);",
+                    "    Ext.getStore('JsonStoreJurusan').load();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "506949d4-1b6a-4b64-8344-026b99526aec"
+        }
+    ]
+}

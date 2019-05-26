@@ -1,0 +1,152 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "window_mapel",
+        "designer|userClassName": "window_mapel",
+        "height": 152,
+        "modal": true,
+        "title": "Window Mata Pelajaran",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "0d27b32f-a297-47f0-a10f-41fde7603434",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|displayName": "formMapel",
+                "title": ""
+            },
+            "name": "MyForm1",
+            "designerId": "075df38c-8984-47bd-a1c5-881440ab525d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "IDMapel_"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "87453de2-4080-48d1-8dbc-addcd18fe886"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Mata Pelajaran",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "name": "NamaMapel_"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "b1bb859e-8ee8-4051-8dd2-cf315b3acd2e"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "KKM",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 80,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Kkm_"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "d1a44b2e-128b-41b4-a3ed-895f06c0915f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "containerWindowMapel",
+                "dock": null,
+                "layout": "hbox",
+                "width": null
+            },
+            "name": "MyContainer13",
+            "designerId": "a0ef08ec-5314-49f2-a8f5-9ae03d8d06cf",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowMapelBatal",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #ff2d55;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Batal"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "1405092d-95ed-4803-b3b1-f92af7cc2acc"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowSimpan",
+                        "itemId": "btnWindowMapelSimpan",
+                        "layout|flex": null,
+                        "style": [
+                            "{",
+                            "    background: #4cd964;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Simpan",
+                        "width": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "6b3f2c35-b7f0-4331-9c1e-6d402567618f"
+                }
+            ]
+        }
+    ]
+}

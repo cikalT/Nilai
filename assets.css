@@ -1,0 +1,194 @@
+/* ----------------- FONT ----------------- */
+
+@font-face {
+    font-family : 'Google-Bold';
+    src : url('assets/GoogleSans-Bold.ttf');
+}
+@font-face {
+    font-family : 'Google-Medium';
+    src : url('assets/GoogleSans-Medium.ttf');
+}
+@font-face {
+    font-family : 'Google-Regular';
+    src : url('assets/GoogleSans-Regular.ttf');
+}
+
+/* ----------------- CUSTOM ----------------- */
+
+.background {
+    background-color : #e3f2fd;
+}
+
+.background-tile {
+    background-color : #c7e5fc;
+}
+
+.background-menu {
+    background-color : #0d47a1;
+}
+
+.title-page {
+    background-color : #007de1;
+}
+
+.title-text {
+    font-size : 30px;
+    color : #ffffff;
+    font-family : 'Google-Bold' !important;
+}
+
+.font-dashboard {
+    font-size: 25px;
+    color : #ffffff;
+    font-family : 'Google-Medium' !important;
+}
+
+.font-dashboard-value {
+    font-size: 60px;
+    color : #ffffff;
+    font-family : 'Google-Regular' !important;
+}
+
+.btnTambah {
+    background: #4cd964;
+    border: none;
+    height: 25px;
+}
+
+.btnEdit {
+    background: #007de1;
+    border: none;
+    height: 25px;
+}
+
+.btnHapus {
+    background: #ff2d55;
+    border: none;
+    height: 25px;
+}
+
+.btnRefresh {
+    background: #5ac8fa;
+    border: none;
+    height: 25px;
+}
+
+.btnWindowBatal {
+    margin : 0px 10px;
+    background-color : #ff2d55;
+}
+
+.btnWindowSimpan {
+    margin : 0px 10px;
+    background-color : #4cd964;
+}
+
+.btnCetak {
+    background: #ff9500;
+    border: none;
+    height: 25px;
+}
+
+.menu-text {
+    font-size: 20px;
+}
+
+/* ----------------- SYSTEM ----------------- */
+
+/* panel */
+.x-panel-header-default {
+    background-color : #007de1;
+}
+
+.x-splitter {
+    background-color : #007de1;
+}
+
+/* window */
+.x-window-header-default{
+    border-style: solid;
+    border-color: #007de1;
+    background-color : #007de1;
+}
+
+.x-window-default {
+    border-color : #007de1;
+}
+
+.x-window-header-default .x-tool-img {
+    background-color: #007de1;
+}
+
+/* menu panel */
+.x-menu-item {
+    font-family : 'Google-Bold' !important;
+    padding : 4px;
+}
+
+.x-menu-item-text {
+    font-family: sans-serif;    
+    font-size : 15px;
+}
+
+.x-menu-item:hover, .x-menu-item-active{
+    border-left : 4px solid #007de1;
+    border-radius : 3px;
+    transition : .2s !important;
+    background-color : #c7e5fc;
+    font-size : 15px;
+    color : #ffffff;
+    font-family : 'Google-Bold' !important;
+}
+
+.x-menu-item:hover, .x-menu-item-text {
+    transition : .2s;
+}
+
+.x-menu-item-text:hover {
+    font-size : 15px;
+    color : #007de1;
+}
+
+/* table */
+.x-header-text {
+    font-family : 'Google-Bold' !important;
+}
+
+.x-column-header-text {
+    font-family : 'Google-Medium' !important;
+    font-size : 15px;
+}
+
+.x-grid-cell-inner {
+    font-family : 'Google-Regular' !important;
+    font-size : 15px;
+}
+
+/* form */
+.x-form-display-field {
+    font-family : 'Google-Regular' !important;
+    font-size : 15px;
+}
+
+.x-form-text {
+    font-family : 'Google-Regular' !important;
+    font-size : 15px;
+}
+
+/* chart */
+.x-surface tspan {
+    font-family: 'Google-Regular' !important;
+}
+
+/* label */
+.x-form-item-label {
+    font-family: 'Google-Regular' !important;
+    font-size : 15px;
+}
+
+.x-boundlist-item {
+    font-family: 'Google-Regular' !important;
+    font-size : 15px;
+}
+
+/* ---------------------------------------- */

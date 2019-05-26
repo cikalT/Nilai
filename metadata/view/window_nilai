@@ -1,0 +1,310 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "window_nilai",
+        "designer|userClassName": "window_nilai",
+        "height": 360,
+        "modal": true,
+        "title": "Window Nilai",
+        "width": 421
+    },
+    "name": "window_siswa1",
+    "designerId": "26fd626c-84e3-4e29-9359-0b0e11ad4e54",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|displayName": "formNilai",
+                "title": ""
+            },
+            "name": "MyForm1",
+            "designerId": "3343ff31-45f2-4a3c-9767-21fe32dd68ab",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "IDNilai_"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "d5c9b1e8-e195-41f1-911b-8d8e71174ea4"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "itemId": "txtIdSiswa",
+                        "layout|anchor": "100%",
+                        "name": "IDSiswa_"
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "61493a66-89dd-4c84-ae2d-67bac9bcfd0a"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "fieldLabel": "NIS",
+                        "itemId": "srcNisSiswa",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxWidth": 210,
+                        "minValue": 0,
+                        "name": "Nis_"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "613d3745-754c-4126-b724-efb53062d31a"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nama",
+                        "itemId": "txtNamaSiswa",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "name": "NamaSiswa_",
+                        "value": "Nama Siswa"
+                    },
+                    "name": "MyDisplayField",
+                    "designerId": "5899b256-88f9-4b71-a0dc-6e8043794ccb"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "blankText": null,
+                        "displayField": "NamaMapel_",
+                        "editable": false,
+                        "emptyText": "Pilih Mata Pelajaran",
+                        "fieldLabel": "Mata Pelajaran",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "name": "IDMapel_",
+                        "store": "JsonStoreMapel",
+                        "valueField": "IDMapel_"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "d03836f2-9abd-46e5-9f08-36d413d82291"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "blankText": null,
+                        "displayField": "Semester_",
+                        "editable": false,
+                        "emptyText": "Pilih Semester",
+                        "fieldLabel": "Semester",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxWidth": 260,
+                        "name": "Semester_",
+                        "queryMode": "local",
+                        "store": "JsonStoreSemester",
+                        "valueField": "Semester_",
+                        "width": null
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "52438333-9811-45dc-add0-ade8cfc5ee59"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Tugas 1",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 100,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Tugas1_"
+                    },
+                    "name": "MyNumberField1",
+                    "designerId": "1c5f033d-de7a-4f1d-8d37-399f5eb5566e"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Tugas 2",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 100,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Tugas2_"
+                    },
+                    "name": "MyNumberField2",
+                    "designerId": "966820ae-569b-4f08-b207-def80ac113dc"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Tugas 3",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 100,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Tugas3_"
+                    },
+                    "name": "MyNumberField3",
+                    "designerId": "25301627-d943-4bfb-a759-647a04e95133"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "UTS",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 100,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Uts_"
+                    },
+                    "name": "MyNumberField4",
+                    "designerId": "f605ada9-33e4-4292-9599-0eaf2d85df0b"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "UAS",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "maxValue": 100,
+                        "maxWidth": 190,
+                        "minValue": 0,
+                        "name": "Uas_"
+                    },
+                    "name": "MyNumberField5",
+                    "designerId": "d9433dd2-3000-4222-b918-954dda3e4977"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "containerWindowNilai",
+                "layout": "hbox"
+            },
+            "name": "MyContainer8",
+            "designerId": "c42ad568-650e-4f7c-af8a-8de8f62de2c2",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowNilaiBatal",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #ff2d55;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Batal"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "a5735d4c-362e-408d-aa52-9acff4cb7129"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowNilaiSimpan",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #4cd964;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Simpan"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "ac1c0eab-c04e-495c-9ebb-85580652a309"
+                }
+            ]
+        }
+    ]
+}

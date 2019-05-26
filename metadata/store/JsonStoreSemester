@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"Semester_\":'1'",
+            "    },",
+            "    {",
+            "        \"Semester_\":'2'",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "JsonStoreSemester",
+        "storeId": "JsonStoreSemester"
+    },
+    "name": "MyJsonStore",
+    "designerId": "d8ab9e42-04ef-43d5-aa04-0d7a7a585532",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "AjaxProxySemester"
+            },
+            "name": "MyAjaxProxy4",
+            "designerId": "46b9bec7-2c34-49cd-881d-cabb88ff6780",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderSemester"
+                    },
+                    "name": "MyJsonReader4",
+                    "designerId": "98f6ae51-2fa9-459e-9c3a-3214bcb8f410"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Semester_"
+            },
+            "name": "MyField23",
+            "designerId": "0b4eb0de-7d44-44ce-9c9b-e1077cbf1964"
+        }
+    ]
+}

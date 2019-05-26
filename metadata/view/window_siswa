@@ -1,0 +1,201 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "window_siswa",
+        "designer|userClassName": "window_siswa",
+        "height": 300,
+        "modal": true,
+        "title": "Window Siswa",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "eb881930-82fa-4dce-9781-382a81de5e19",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|displayName": "formSiswa",
+                "title": ""
+            },
+            "name": "MyForm1",
+            "designerId": "1d1f46e4-c7ab-49cc-8ae5-69172aa5c768",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "IDSiswa_"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "9a435eb1-78e9-4d0f-a61b-c05cad5f4eac"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "NIS",
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "Nis_"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "b55e4ca2-d704-4dc3-a5f6-23b5598a477a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nama",
+                        "layout|anchor": "100%",
+                        "name": "NamaSiswa_"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "8825df3d-044f-4a7d-a295-db1de9a71ffc"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Alamat",
+                        "layout|anchor": "100%",
+                        "name": "Alamat_"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "90c59846-35a2-4ccf-b3f9-6f5bcd59ec21"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "blankText": "Pilih Kelas",
+                        "displayField": "NamaKelas_",
+                        "editable": false,
+                        "emptyText": "Pilih Kelas",
+                        "fieldLabel": "Kelas",
+                        "layout|anchor": "100%",
+                        "name": "IDKelas_",
+                        "store": "JsonStoreKelas",
+                        "valueField": "IDKelas_"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "95306e17-bde0-4172-a972-c00f2f8b7ece"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "NamaJur_",
+                        "editable": false,
+                        "emptyText": "Pilih Jurusan",
+                        "fieldLabel": "Jurusan",
+                        "layout|anchor": "100%",
+                        "name": "IDJur_",
+                        "store": "JsonStoreJurusan",
+                        "valueField": "IDJur_"
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "a8e9c325-1976-42dc-8309-73153f4d46ab"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "containerWindowSiswa",
+                "layout": "hbox"
+            },
+            "name": "MyContainer8",
+            "designerId": "b401acdb-0803-4bc1-8c81-d5527c2daf21",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowSiswaBatal",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #ff2d55;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Batal"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "f53e7f12-d3ff-4085-83f1-59b3039fad43"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowSiswaSimpan",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #4cd964;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Simpan"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "2eaf2300-bf45-4b96-bdfa-64bfd8d1859a"
+                }
+            ]
+        }
+    ]
+}

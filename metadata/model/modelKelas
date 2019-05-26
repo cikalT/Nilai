@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelKelas"
+    },
+    "name": "MyModel",
+    "designerId": "b2649676-2243-4ba6-b214-6a1a9e4c8607",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "NoKelas_"
+            },
+            "name": "MyField5",
+            "designerId": "91012b22-e8d0-4fb8-a784-9d6f39f0189a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "IDKelas_"
+            },
+            "name": "MyField",
+            "designerId": "d33daf5d-7120-4b8d-911d-1368509944c7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "NamaKelas_"
+            },
+            "name": "MyField1",
+            "designerId": "a15ec195-49ca-4b30-9dae-b2f2f59a1ea8"
+        }
+    ]
+}

@@ -1,0 +1,246 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "jurusanController"
+    },
+    "name": "MyController",
+    "designerId": "4f24b05d-1813-49fa-b62b-f2faecf436b3",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#kelasjurPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "Ext.getStore('JsonStoreJurusan').load();"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onPanelShow",
+            "designerId": "b1aea4e0-8505-4411-92aa-e337755cf0bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTambahJurusan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "ontnTambahJurusan",
+                "implHandler": [
+                    "Ext.widget('window_jurusan').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "ontnTambahJurusan",
+            "designerId": "1d3bcb51-18f9-4260-b2f6-ca072853ab93"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEditJurusan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditJurusan",
+                "implHandler": [
+                    "var win = Ext.widget('window_jurusan').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelJurusan')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnEditJurusan",
+            "designerId": "cc3f37f1-ec88-4328-885e-3eff7f81c249"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnHapusJurusan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnHapusJurusan",
+                "implHandler": [
+                    "var hapus = function(btn) {",
+                    "    if(btn == 'yes'){",
+                    "        var grid = Ext.ComponentQuery.query('#tabelJurusan')[0];",
+                    "        var selection = grid.getSelectionModel().getSelection()[0];",
+                    "        var id = selection.get('IDJur_');",
+                    "",
+                    "        if(selection) {",
+                    "            Ext.Ajax.request({",
+                    "                url:'api/jurusan/hapusJurusan.php',",
+                    "                params:{",
+                    "                    IDJur_:id",
+                    "                },",
+                    "                success:function(response, opts) {",
+                    "                    response = Ext.decode(response.responseText);",
+                    "                    if(response.success){",
+                    "                        Ext.ComponentQuery.query('#tabelJurusan')[0].getSelectionModel().clearSelections();",
+                    "                        Ext.ComponentQuery.query('#btnEditJurusan')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnHapusJurusan')[0].setDisabled(true);",
+                    "                        Ext.getStore('JsonStoreJurusan').load();",
+                    "//                         Ext.Ajax.request({",
+                    "//                             url: 'api/siswa/jumlahSiswa.php',",
+                    "//                             success: function(response) {",
+                    "//                                 console.log(response.responseText);",
+                    "//                                 response = Ext.decode(response.responseText);",
+                    "//                                 console.log(response.message);",
+                    "//                                 var jumlah = response.message;",
+                    "//                                 Ext.ComponentQuery.query(\"#bykSiswa\")[0].setText(jumlah);",
+                    "//                             }",
+                    "//                         });",
+                    "                    }else{",
+                    "                         Ext.MessageBox.show({",
+                    "                             title:'Peringatan',",
+                    "                             msg:response.message,",
+                    "                             buttons:Ext.MessageBox.OK,",
+                    "                             icon:Ext.MessageBox.INFO",
+                    "                         });",
+                    "                    }",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "};",
+                    "Ext.MessageBox.show({",
+                    "    title:'Peringatan hapus',",
+                    "    msg:\"Apa yakin?\",",
+                    "    buttons: Ext.MessageBox.YESNO,",
+                    "    icon:Ext.MessageBox.QUESTION,",
+                    "    fn:hapus",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnHapusJurusan",
+            "designerId": "5654811d-dfc3-4401-8d86-a47dbc181e10"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabelJurusan",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelSelectionChange",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#btnEditJurusan')[0].setDisabled(false);",
+                    "Ext.ComponentQuery.query('#btnHapusJurusan')[0].setDisabled(false);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelKelas')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditKelas')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusKelas')[0].setDisabled(true);",
+                    "Ext.getStore('JsonStoreKelas').load();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "8897c5a4-00e1-4eb5-be24-3dd117776d39"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowJurusanBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowJurusanBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowJurusanBatal",
+            "designerId": "323b977e-2bda-4cf9-aa76-71a3bd36a7a7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowJurusanSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowJurusanSimpan",
+                "implHandler": [
+                    "var win = button.up('window');",
+                    "var form = win.down('form');",
+                    "",
+                    "if(form.isValid()) {",
+                    "    form.submit({",
+                    "        url:'api/jurusan/simpanJurusan.php',",
+                    "        success:function(a, response){",
+                    "            console.log(a);",
+                    "            console.log(response);",
+                    "            win.close();",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Berhasil\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "",
+                    "            Ext.ComponentQuery.query('#tabelJurusan')[0].getSelectionModel().clearSelections();",
+                    "            Ext.ComponentQuery.query('#btnEditJurusan')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnHapusJurusan')[0].setDisabled(true);",
+                    "            Ext.getStore('JsonStoreJurusan').load();",
+                    "        },",
+                    "        failure:function(a, response) {",
+                    "            //console.log(\"gagal\");",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Gagal\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "}",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowJurusanSimpan",
+            "designerId": "4b2e46ce-0b3d-4841-aa8a-b3b1a3035be3"
+        }
+    ]
+}

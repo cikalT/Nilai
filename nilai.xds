@@ -1,0 +1,68 @@
+{
+    "name": "nilai",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": ""
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1943,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "353f0c49-9162-4dc5-8e2d-ffb09f0d3a62",
+            "8cc7955a-293f-41fa-980c-3865693728c6",
+            "f844ba5f-9198-48a2-9046-e6c87fff8c4a",
+            "eb881930-82fa-4dce-9781-382a81de5e19",
+            "26fd626c-84e3-4e29-9359-0b0e11ad4e54",
+            "95111a9c-529d-4058-a4e3-1978f05050cd",
+            "0d27b32f-a297-47f0-a10f-41fde7603434"
+        ],
+        "store": [
+            "98dca840-e6d6-422f-89d8-7cf3597e2dc0",
+            "c1c27b51-a0cf-412f-a25d-23c2a7600c3c",
+            "1b292f12-e826-43f0-951a-8af77376edd9",
+            "bb265bb5-225e-4ad7-9234-50cca81458c2",
+            "864f1695-9544-45a6-96f2-8bbb02e8a909",
+            "d8ab9e42-04ef-43d5-aa04-0d7a7a585532",
+            "409a272d-3489-4da3-b02b-7185ec3eff42",
+            "27f0c70c-aa4e-4885-8b2b-64b5f8d11888",
+            "b3a4e936-a46b-4c6d-84a8-0abd5c55db70"
+        ],
+        "controller": [
+            "02e19093-9c6b-4222-8b96-2632f82d7303",
+            "8731f8f0-7536-4cf8-97b3-517f9f50260b",
+            "4f24b05d-1813-49fa-b62b-f2faecf436b3",
+            "90b56ed3-6cf7-4fae-97f5-b086e51e54e4",
+            "e45ec834-9cf9-44d1-b91e-20df21f8fc43",
+            "501a2524-1a12-415a-88ad-2816cb97aaaf"
+        ],
+        "model": [
+            "b2649676-2243-4ba6-b214-6a1a9e4c8607",
+            "3d32e256-2d98-4180-9ff7-017b8100cceb",
+            "201cf8a2-1665-4552-a0d7-75d9bb365448",
+            "31d2a49e-2814-4e3e-8ad8-9393e4d72762",
+            "17bc10d6-8d4f-49e2-8bc4-d0028a10d713"
+        ],
+        "resource": [
+            "efa3151d-f411-416b-a78d-276e3b22783a",
+            "a96317f5-0168-49ff-bd06-166c59496b4c",
+            "870fa433-3f64-460d-921b-26a5698da4a0"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

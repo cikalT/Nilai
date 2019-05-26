@@ -1,0 +1,277 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "homeController"
+    },
+    "name": "MyController",
+    "designerId": "501a2524-1a12-415a-88ad-2816cb97aaaf",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#homePanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "//value",
+                    "Ext.Ajax.request({",
+                    "    url: 'api/home/dataHome.php',",
+                    "    success: function(response) {",
+                    "        console.log(response.responseText);",
+                    "        response = Ext.decode(response.responseText);",
+                    "        var jmlhKelas = response.ValueKelas_;",
+                    "        var jmlhJur = response.ValueJur_;",
+                    "        var jmlhMapel = response.ValueMapel_;",
+                    "        var jmlhSiswa = response.ValueSiswa_;",
+                    "",
+                    "        Ext.ComponentQuery.query('#txtValueKelas')[0].setText(jmlhKelas);",
+                    "        Ext.ComponentQuery.query('#txtValueJurusan')[0].setText(jmlhJur);",
+                    "        Ext.ComponentQuery.query('#txtValueMapel')[0].setText(jmlhMapel);",
+                    "        Ext.ComponentQuery.query('#txtValueSiswa')[0].setText(jmlhSiswa);",
+                    "    }",
+                    "});",
+                    "",
+                    "//chart",
+                    "// Ext.getStore('StoreChartHome').load();",
+                    "Ext.getStore('StoreChartColumn').load();",
+                    "Ext.getStore('StoreChartPie').load();",
+                    "Ext.getStore('JsonStoreMapel').load();"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onPanelShow",
+            "designerId": "9d8c7c6e-6827-4581-98ef-954213797fbe"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabelMapel",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelSelectionChange",
+                "implHandler": [
+                    "    Ext.ComponentQuery.query('#btnEditMapel')[0].setDisabled(false);",
+                    "    Ext.ComponentQuery.query('#btnHapusMapel')[0].setDisabled(false);"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "2bdd099e-b8ec-4b62-b53a-0dd930a236e8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnRefreshMapel",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnRefreshMapel",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#tabelMapel')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditMapel')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusMapel')[0].setDisabled(true);",
+                    "Ext.getStore('JsonStoreMapel').load();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnRefreshMapel",
+            "designerId": "d06db390-d241-4df4-8926-c07ffdc58956"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTambahMapel",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTambahMapel",
+                "implHandler": [
+                    "Ext.widget('window_mapel').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnTambahMapel",
+            "designerId": "6a2bfa07-9f3a-44c4-8407-cca2704aed45"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEditMapel",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditMapel",
+                "implHandler": [
+                    "var win = Ext.widget('window_mapel').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelMapel')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnEditMapel",
+            "designerId": "162dc3d3-b63f-476e-a37e-46cd8709611d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnHapusMapel",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnHapusMapel",
+                "implHandler": [
+                    "var hapus = function(btn) {",
+                    "    if(btn == 'yes'){",
+                    "        var grid = Ext.ComponentQuery.query('#tabelMapel')[0];",
+                    "        var selection = grid.getSelectionModel().getSelection()[0];",
+                    "        var id = selection.get('IDMapel_');",
+                    "",
+                    "        if(selection) {",
+                    "            Ext.Ajax.request({",
+                    "                url:'api/mapel/hapusMapel.php',",
+                    "                params:{",
+                    "                    IDMapel_:id",
+                    "                },",
+                    "                success:function(response, opts) {",
+                    "                    response = Ext.decode(response.responseText);",
+                    "                    if(response.success){",
+                    "                        Ext.ComponentQuery.query('#tabelMapel')[0].getSelectionModel().clearSelections();",
+                    "                        Ext.ComponentQuery.query('#btnEditMapel')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnHapusMapel')[0].setDisabled(true);",
+                    "                        Ext.getStore('JsonStoreMapel').load();",
+                    "                        SistemInformasiNilai.app.getController('homeController').onPanelShow();",
+                    "                    }else{",
+                    "                         Ext.MessageBox.show({",
+                    "                             title:'Peringatan',",
+                    "                             msg:response.message,",
+                    "                             buttons:Ext.MessageBox.OK,",
+                    "                             icon:Ext.MessageBox.INFO",
+                    "                         });",
+                    "                    }",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "};",
+                    "Ext.MessageBox.show({",
+                    "    title:'Peringatan hapus',",
+                    "    msg:\"Apa yakin?\",",
+                    "    buttons: Ext.MessageBox.YESNO,",
+                    "    icon:Ext.MessageBox.QUESTION,",
+                    "    fn:hapus",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnHapusMapel",
+            "designerId": "11337ff9-5c95-41c4-9ef9-9adccd43756c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowMapelBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowMapelBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowMapelBatal",
+            "designerId": "322e54d0-725b-470e-ae8c-a87ada3afa3b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowMapelSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowMapelSimpan",
+                "implHandler": [
+                    "    var win = button.up('window');",
+                    "    var form = win.down('form');",
+                    "",
+                    "    if(form.isValid()) {",
+                    "        form.submit({",
+                    "        url:'api/mapel/simpanMapel.php',",
+                    "        success:function(a, response){",
+                    "            console.log(a);",
+                    "            console.log(response);",
+                    "            win.close();",
+                    "            Ext.MessageBox.show({",
+                    "                        title:\"Berhasil\",",
+                    "                        msg:response.result.message,",
+                    "                        icon:Ext.MessageBox.INFO",
+                    "                    });",
+                    "",
+                    "            Ext.ComponentQuery.query('#tabelMapel')[0].getSelectionModel().clearSelections();",
+                    "            Ext.ComponentQuery.query('#btnEditMapel')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnHapusMapel')[0].setDisabled(true);",
+                    "            Ext.getStore('JsonStoreMapel').load();",
+                    "            SistemInformasiNilai.app.getController('homeController').onPanelShow();",
+                    "        },",
+                    "        failure:function(a, response) {",
+                    "            //console.log(\"gagal\");",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Gagal\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "    }",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowMapelSimpan",
+            "designerId": "17d8222a-6545-4f1f-a212-2984c14270b5"
+        }
+    ]
+}

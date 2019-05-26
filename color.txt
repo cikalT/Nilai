@@ -1,0 +1,17 @@
+blue : #007de1
+pink : #ff2d55
+yellow : #ffcc00
+orange : #ff9500
+green : #4cd964
+teal : #5ac8fa
+purple : #5856d6
+red : #ff3b30
+
+{'field':'Label_',
+renderer: function(value, label, storeItem) {
+return '';
+},'display':'rotate','contrast':true,'font':'12px Arial'}
+
+
+//setiap ganti text biar terus filter pakai change
+https://material-ui.com/style/color/#color-palette

@@ -1,0 +1,79 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "JsonStoreSiswa",
+        "model": "modelSiswa",
+        "pageSize": 25,
+        "storeId": "JsonStoreSiswa"
+    },
+    "name": "MyJsonStore",
+    "designerId": "1b292f12-e826-43f0-951a-8af77376edd9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read:'api/siswa/dataSiswa.php'",
+                    "}"
+                ],
+                "designer|displayName": "AjaxProxySiswa"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "48c8cf0c-c1b8-489c-be68-f091f06ba885",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderSiswa",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "428a3f52-7089-42ae-8537-a1785be7504c"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonStoreSiswaBeforeLoad",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaSiswa')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasSiswa')[0].getValue();",
+                    "",
+                    "store.getProxy().setExtraParam('NamaSiswa_', namaSiswa);",
+                    "store.getProxy().setExtraParam('KelasSiswa_', kelasSiswa);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "name": "onJsonStoreSiswaBeforeLoad",
+            "designerId": "7dfb0195-287b-4cdb-8011-7c9f018a0468"
+        }
+    ]
+}

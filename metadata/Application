@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Navigation",
+            "kelasController",
+            "jurusanController",
+            "siswaController",
+            "nilaiController",
+            "homeController"
+        ],
+        "models": [
+            "modelKelas",
+            "modelJurusan",
+            "modelSiswa",
+            "modelMapel",
+            "modelNilai"
+        ],
+        "name": "SistemInformasiNilai",
+        "stores": [
+            "JsonStoreKelas",
+            "JsonStoreJurusan",
+            "JsonStoreSiswa",
+            "JsonStoreMapel",
+            "JsonStoreNilai",
+            "JsonStoreSemester",
+            "StoreChartNilai",
+            "StoreChartColumn",
+            "StoreChartPie"
+        ],
+        "views": [
+            "MainView",
+            "window_kelas",
+            "window_jurusan",
+            "window_siswa",
+            "window_nilai",
+            "window_detail",
+            "window_mapel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

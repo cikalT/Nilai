@@ -1,0 +1,74 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreChartPie",
+        "storeId": "StoreChartPie"
+    },
+    "name": "MyJsonStore",
+    "designerId": "b3a4e936-a46b-4c6d-84a8-0abd5c55db70",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/home/chartPie.php'",
+                    "}"
+                ]
+            },
+            "name": "MyAjaxProxy7",
+            "designerId": "5b7dd126-0341-4dff-b974-043c61380a9d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader7",
+                    "designerId": "7449ae2e-852e-4a91-ba08-898ba3f13993"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Jumlah_"
+            },
+            "name": "MyField31",
+            "designerId": "2b827e6a-305a-49af-abb7-6db3eedf30fd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Label_"
+            },
+            "name": "MyField32",
+            "designerId": "b2a197fb-af5a-458f-8b88-ab240c63759b"
+        }
+    ]
+}

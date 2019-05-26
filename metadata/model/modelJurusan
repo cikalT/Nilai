@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelJurusan"
+    },
+    "name": "MyModel",
+    "designerId": "3d32e256-2d98-4180-9ff7-017b8100cceb",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "NoJur_"
+            },
+            "name": "MyField4",
+            "designerId": "af9d22d9-23c7-4318-b833-346e6276516e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "IDJur_"
+            },
+            "name": "MyField2",
+            "designerId": "36994d9f-b9ce-40b8-b1a1-7b866a75cbc2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "NamaJur_"
+            },
+            "name": "MyField3",
+            "designerId": "9ee68086-f389-4c25-9091-8d42c40c3e61"
+        }
+    ]
+}

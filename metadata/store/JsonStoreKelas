@@ -1,0 +1,51 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JsonStoreKelas",
+        "model": "modelKelas",
+        "storeId": "JsonStoreKelas"
+    },
+    "name": "MyJsonStore",
+    "designerId": "98dca840-e6d6-422f-89d8-7cf3597e2dc0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/kelas/dataKelas.php'",
+                    "}"
+                ],
+                "designer|displayName": "AjaxProxyKelas"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "da9d5d25-e368-4057-97c8-332f54903357",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderKelas",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "cbeecfd8-e2dd-496c-901b-4b1478c5c76f"
+                }
+            ]
+        }
+    ]
+}

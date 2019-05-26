@@ -1,0 +1,74 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreChartNilai",
+        "storeId": "StoreChartNilai"
+    },
+    "name": "StoreChartHome1",
+    "designerId": "409a272d-3489-4da3-b02b-7185ec3eff42",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/nilai/chartNilai.php'",
+                    "}"
+                ]
+            },
+            "name": "MyAjaxProxy5",
+            "designerId": "06e569ee-4205-4a3d-a634-7e537b5a079c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "410ac141-eb11-445f-9ba4-d0225aa5f279"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Nilai_"
+            },
+            "name": "MyField26",
+            "designerId": "9cf155dd-05a1-4567-a25f-429c23a9451e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Label_"
+            },
+            "name": "MyField27",
+            "designerId": "ac7ab608-7d9b-4e94-89c7-8872b9f11ea3"
+        }
+    ]
+}

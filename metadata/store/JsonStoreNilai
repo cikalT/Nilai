@@ -1,0 +1,82 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JsonStoreNilai",
+        "model": "modelNilai",
+        "pageSize": 25,
+        "storeId": "JsonStoreNilai"
+    },
+    "name": "MyJsonStore",
+    "designerId": "864f1695-9544-45a6-96f2-8bbb02e8a909",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/nilai/dataNilai.php'",
+                    "}"
+                ],
+                "designer|displayName": "AjaxProxyNilai"
+            },
+            "name": "MyAjaxProxy3",
+            "designerId": "27e5bb2c-06fb-4d40-838e-2b19e472b479",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "JsonReaderNilai",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "263cc7d0-ad09-43b3-be03-9c49c6792a00"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaNilai')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasNilai')[0].getValue();",
+                    "var mapelNilai = Ext.ComponentQuery.query('#srcMapelNilai')[0].getValue();",
+                    "var semesterNilai = Ext.ComponentQuery.query('#srcSemesterNilai')[0].getValue();",
+                    "",
+                    "store.getProxy().setExtraParam('NamaSiswa_', namaSiswa);",
+                    "store.getProxy().setExtraParam('KelasSiswa_', kelasSiswa);",
+                    "store.getProxy().setExtraParam('MapelNilai_', mapelNilai);",
+                    "store.getProxy().setExtraParam('SemesterNilai_', semesterNilai);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "name": "onJsonstoreBeforeLoad",
+            "designerId": "e1aaf441-a496-43a2-bace-67af00bcab54"
+        }
+    ]
+}

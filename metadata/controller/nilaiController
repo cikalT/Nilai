@@ -1,0 +1,543 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nilaiController"
+    },
+    "name": "MyController",
+    "designerId": "e45ec834-9cf9-44d1-b91e-20df21f8fc43",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#nilaiPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "Ext.getStore('JsonStoreNilai').load();",
+                    "Ext.ComponentQuery.query('#btnCetakNilai')[0].setVisible(false);"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onPanelShow",
+            "designerId": "14b1615f-b39c-4d0d-b3ed-2a9df94e9317"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabelNilai",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelSelectionChange",
+                "implHandler": [
+                    "    Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(false);",
+                    "    Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(false);",
+                    "    Ext.ComponentQuery.query('#btnCetakNilai')[0].setVisible(true);"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "d96e0b0f-a977-401d-8291-552e3444af5d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTambahNilai",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTambahNilai",
+                "implHandler": [
+                    "Ext.widget('window_nilai').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnTambahNilai",
+            "designerId": "a37e66fe-1b98-4ef9-bf1d-b5dfa7c8bec3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEditNilai",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditNilai",
+                "implHandler": [
+                    "var win = Ext.widget('window_nilai').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelNilai')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();",
+                    "Ext.ComponentQuery.query('#srcNisSiswa')[0].setVisible(false);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnEditNilai",
+            "designerId": "44a57f69-8ecb-4de6-b203-5772cebf5a4b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnHapusNilai",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnHapusNilai",
+                "implHandler": [
+                    "var hapus = function(btn) {",
+                    "    if(btn == 'yes'){",
+                    "        var grid = Ext.ComponentQuery.query('#tabelNilai')[0];",
+                    "        var selection = grid.getSelectionModel().getSelection()[0];",
+                    "        var id = selection.get('IDNilai_');",
+                    "",
+                    "        if(selection) {",
+                    "            Ext.Ajax.request({",
+                    "                url:'api/nilai/hapusNilai.php',",
+                    "                params:{",
+                    "                    IDNilai_:id",
+                    "                },",
+                    "                success:function(response, opts) {",
+                    "                    response = Ext.decode(response.responseText);",
+                    "                    if(response.success){",
+                    "                        Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "                        Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnCetakNilai')[0].setVisible(false);",
+                    "                        Ext.getStore('JsonStoreNilai').load();",
+                    "                    }else{",
+                    "                         Ext.MessageBox.show({",
+                    "                             title:'Peringatan',",
+                    "                             msg:response.message,",
+                    "                             buttons:Ext.MessageBox.OK,",
+                    "                             icon:Ext.MessageBox.INFO",
+                    "                         });",
+                    "                    }",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "};",
+                    "Ext.MessageBox.show({",
+                    "    title:'Peringatan hapus',",
+                    "    msg:\"Apa yakin?\",",
+                    "    buttons: Ext.MessageBox.YESNO,",
+                    "    icon:Ext.MessageBox.QUESTION,",
+                    "    fn:hapus",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnHapusNilai",
+            "designerId": "8c2c9076-d1e5-4df4-b5a5-37f21c4561e0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnRefreshNilai",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnRefreshNilai",
+                "implHandler": [
+                    "    var nama = Ext.ComponentQuery.query('#srcNamaNilai')[0];",
+                    "    var kelas = Ext.ComponentQuery.query('#srcKelasNilai')[0];",
+                    "    var semester = Ext.ComponentQuery.query('#srcSemesterNilai')[0];",
+                    "    var mapel = Ext.ComponentQuery.query('#srcMapelNilai')[0];",
+                    "",
+                    "    nama.reset();",
+                    "    kelas.reset();",
+                    "    semester.reset();",
+                    "    mapel.reset();",
+                    "    Ext.getStore('JsonStoreNilai').load();",
+                    "",
+                    "    Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "    Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnCetakNilai')[0].setVisible(false);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnRefreshNilai",
+            "designerId": "ec392af1-988c-4df8-b364-bca7851b68a0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowNilaiBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowNilaiBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowNilaiBatal",
+            "designerId": "323eef4a-d0c5-48a5-ae5c-0c44bdf1506e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowNilaiSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowNilaiSimpan",
+                "implHandler": [
+                    "    var win = button.up('window');",
+                    "    var form = win.down('form');",
+                    "",
+                    "    if(form.isValid()) {",
+                    "        form.submit({",
+                    "        url:'api/nilai/simpanNilai.php',",
+                    "        success:function(a, response){",
+                    "            console.log(a);",
+                    "            console.log(response);",
+                    "            win.close();",
+                    "            Ext.MessageBox.show({",
+                    "                        title:\"Berhasil\",",
+                    "                        msg:response.result.message,",
+                    "                        icon:Ext.MessageBox.INFO",
+                    "                    });",
+                    "",
+                    "            Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "            Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnCetakNilai')[0].setVisible(false);",
+                    "            Ext.getStore('JsonStoreNilai').load();",
+                    "        },",
+                    "        failure:function(a, response) {",
+                    "            //console.log(\"gagal\");",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Gagal\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "    }"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowNilaiSimpan",
+            "designerId": "81c8dd54-9122-42a4-8dc6-d5710c8dc8bc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcNamaNilai",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onSrcNamaNilai",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaNilai')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasNilai')[0].getValue();",
+                    "var mapelNilai = Ext.ComponentQuery.query('#srcMapelNilai')[0].getValue();",
+                    "var semesterNilai = Ext.ComponentQuery.query('#srcSemesterNilai')[0].getValue();",
+                    "",
+                    "if(e.keyCode == e.ENTER) {",
+                    "    Ext.getStore('JsonStoreNilai').load({",
+                    "        params:{",
+                    "            NamaSiswa_ : namaSiswa,",
+                    "            KelasSiswa_ : kelasSiswa,",
+                    "            MapelNilai_ : mapelNilai,",
+                    "            SemesterNilai_ : semesterNilai",
+                    "        }",
+                    "    });",
+                    "    console.log(namaSiswa);",
+                    "",
+                    "    Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "    Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "name": "onSrcNamaNilai",
+            "designerId": "2347050a-442b-4f95-a8b7-71703ed7977f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcKelasNilai",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onSrcKelasNilai",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaNilai')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasNilai')[0].getValue();",
+                    "var mapelNilai = Ext.ComponentQuery.query('#srcMapelNilai')[0].getValue();",
+                    "var semesterNilai = Ext.ComponentQuery.query('#srcSemesterNilai')[0].getValue();",
+                    "",
+                    "Ext.getStore('JsonStoreNilai').load({",
+                    "    params:{",
+                    "        NamaSiswa_ : namaSiswa,",
+                    "        KelasSiswa_ : kelasSiswa,",
+                    "        MapelNilai_ : mapelNilai,",
+                    "        SemesterNilai_ : semesterNilai",
+                    "    }",
+                    "});",
+                    "",
+                    "console.log(semesterNilai);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onSrcKelasNilai",
+            "designerId": "57bea30e-3c13-42e4-bee9-36feff7e1882"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcMapelNilai",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onSrcMapelNilai",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaNilai')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasNilai')[0].getValue();",
+                    "var mapelNilai = Ext.ComponentQuery.query('#srcMapelNilai')[0].getValue();",
+                    "var semesterNilai = Ext.ComponentQuery.query('#srcSemesterNilai')[0].getValue();",
+                    "",
+                    "Ext.getStore('JsonStoreNilai').load({",
+                    "    params:{",
+                    "        NamaSiswa_ : namaSiswa,",
+                    "        KelasSiswa_ : kelasSiswa,",
+                    "        MapelNilai_ : mapelNilai,",
+                    "        SemesterNilai_ : semesterNilai",
+                    "    }",
+                    "});",
+                    "",
+                    "console.log(semesterNilai);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onSrcMapelNilai",
+            "designerId": "dbeeeb14-df7e-4c89-85de-e133635f813b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcSemesterNilai",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onSrcSemesterNilai",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaNilai')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasNilai')[0].getValue();",
+                    "var mapelNilai = Ext.ComponentQuery.query('#srcMapelNilai')[0].getValue();",
+                    "var semesterNilai = Ext.ComponentQuery.query('#srcSemesterNilai')[0].getValue();",
+                    "",
+                    "Ext.getStore('JsonStoreNilai').load({",
+                    "    params:{",
+                    "        NamaSiswa_ : namaSiswa,",
+                    "        KelasSiswa_ : kelasSiswa,",
+                    "        MapelNilai_ : mapelNilai,",
+                    "        SemesterNilai_ : semesterNilai",
+                    "    }",
+                    "});",
+                    "",
+                    "console.log(semesterNilai);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelNilai')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditNilai')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusNilai')[0].setDisabled(true);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onSrcSemesterNilai",
+            "designerId": "a899597e-41e3-4cd0-b038-c8417557b4d3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcNisSiswa",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onSrcNisSiswa",
+                "implHandler": [
+                    "var nisSiswa = Ext.ComponentQuery.query('#srcNisSiswa')[0].getValue();",
+                    "",
+                    "if(e.keyCode == e.ENTER) {",
+                    "    Ext.Ajax.request({",
+                    "        url: 'api/nilai/searchSiswa.php?nis='+nisSiswa,",
+                    "        success: function(response) {",
+                    "            console.log(response.responseText);",
+                    "            response = Ext.decode(response.responseText);",
+                    "            console.log(response.id);",
+                    "            console.log(response.nama);",
+                    "            var idSiswa = response.id;",
+                    "            var namaSiswa = response.nama;",
+                    "            Ext.ComponentQuery.query(\"#txtIdSiswa\")[0].setValue(idSiswa);",
+                    "            Ext.ComponentQuery.query(\"#txtNamaSiswa\")[0].setValue(namaSiswa);",
+                    "        }",
+                    "    });",
+                    "    console.log(nisSiswa);",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "name": "onSrcNisSiswa",
+            "designerId": "c87acff2-7899-4e40-843e-0533945b2b27"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCetakNilai",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCetakNilai",
+                "implHandler": [
+                    "var win = Ext.widget('window_detail').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelNilai')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "var id = selection.data.IDNilai_;",
+                    "",
+                    "console.log(id);",
+                    "",
+                    "Ext.getStore('StoreChartNilai').load({",
+                    "    params:{",
+                    "        idnilai : id",
+                    "    }",
+                    "});",
+                    "",
+                    "// Ext.widget('window_detail').show();",
+                    "",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();",
+                    "Ext.ComponentQuery.query('#srcNisSiswa')[0].setVisible(false);",
+                    "",
+                    "Ext.getStore('StoreChartNilai').load();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnCetakNilai",
+            "designerId": "501b6911-ca7c-4d96-9d55-89a571fd3e39"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCetakNilaiBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCetakNilaiBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnCetakNilaiBatal",
+            "designerId": "8e9024aa-a953-446b-83e4-fda63fc7e8b3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCetakNilaiSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCetakNilaiSimpan",
+                "implHandler": [
+                    "var grid = Ext.ComponentQuery.query('#tabelNilai')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "var id = selection.data.IDNilai_;",
+                    "",
+                    "console.log(id);",
+                    "",
+                    "window.open('api/nilai/printNilai.php?idnilai='+id).window.print();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnCetakNilaiSimpan",
+            "designerId": "fdffa048-e4ce-4c52-a289-d41050fa50fb"
+        }
+    ]
+}

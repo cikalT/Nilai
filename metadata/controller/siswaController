@@ -1,0 +1,358 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "siswaController"
+    },
+    "name": "MyController",
+    "designerId": "90b56ed3-6cf7-4fae-97f5-b086e51e54e4",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#siswaPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "Ext.getStore('JsonStoreSiswa').load();",
+                    "Ext.ComponentQuery.query('#btnCetakSiswa')[0].setVisible(false);"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onPanelShow",
+            "designerId": "4aab8ec6-3efe-4f38-a999-1262475414a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnTambahSiswa",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnTambahSiswa",
+                "implHandler": [
+                    "Ext.widget('window_siswa').show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnTambahSiswa",
+            "designerId": "6a66636d-1fdb-42d2-883d-fbce68b640ab"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabelSiswa",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onGridpanelSelectionChange",
+                "implHandler": [
+                    "    Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(false);",
+                    "    Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(false);"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelectionChange",
+            "designerId": "9cf41aec-13d4-4d2a-a222-b694bfd46a33"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnEditSiswa",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnEditSiswa",
+                "implHandler": [
+                    "var win = Ext.widget('window_siswa').show();",
+                    "var grid = Ext.ComponentQuery.query('#tabelSiswa')[0];",
+                    "var selection = grid.getSelectionModel().getSelection()[0];",
+                    "",
+                    "win.down('form').loadRecord(selection);",
+                    "win.show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnEditSiswa",
+            "designerId": "b014e174-ca3a-4ca4-85d8-9f82fcf3b4df"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnHapusSiswa",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnHapusSiswa",
+                "implHandler": [
+                    "var hapus = function(btn) {",
+                    "    if(btn == 'yes'){",
+                    "        var grid = Ext.ComponentQuery.query('#tabelSiswa')[0];",
+                    "        var selection = grid.getSelectionModel().getSelection()[0];",
+                    "        var id = selection.get('IDSiswa_');",
+                    "",
+                    "        if(selection) {",
+                    "            Ext.Ajax.request({",
+                    "                url:'api/siswa/hapusSiswa.php',",
+                    "                params:{",
+                    "                    IDSiswa_:id",
+                    "                },",
+                    "                success:function(response, opts) {",
+                    "                    response = Ext.decode(response.responseText);",
+                    "                    if(response.success){",
+                    "                        Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "                        Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "                        Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);",
+                    "                        Ext.getStore('JsonStoreSiswa').load();",
+                    "                    }else{",
+                    "                         Ext.MessageBox.show({",
+                    "                             title:'Peringatan',",
+                    "                             msg:response.message,",
+                    "                             buttons:Ext.MessageBox.OK,",
+                    "                             icon:Ext.MessageBox.INFO",
+                    "                         });",
+                    "                    }",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "};",
+                    "Ext.MessageBox.show({",
+                    "    title:'Peringatan hapus',",
+                    "    msg:\"Apa yakin?\",",
+                    "    buttons: Ext.MessageBox.YESNO,",
+                    "    icon:Ext.MessageBox.QUESTION,",
+                    "    fn:hapus",
+                    "});",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnHapusSiswa",
+            "designerId": "b2100265-a2f2-4cdd-bc07-52be0b3e507d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowSiswaBatal",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowSiswaBatal",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowSiswaBatal",
+            "designerId": "f4749460-5c13-49d5-a4bf-56612d8bc10b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnWindowSiswaSimpan",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnWindowSiswaSimpan",
+                "implHandler": [
+                    "var win = button.up('window');",
+                    "    var form = win.down('form');",
+                    "",
+                    "    if(form.isValid()) {",
+                    "        form.submit({",
+                    "        url:'api/siswa/simpanSiswa.php',",
+                    "        success:function(a, response){",
+                    "            console.log(a);",
+                    "            console.log(response);",
+                    "            win.close();",
+                    "            Ext.MessageBox.show({",
+                    "                        title:\"Berhasil\",",
+                    "                        msg:response.result.message,",
+                    "                        icon:Ext.MessageBox.INFO",
+                    "                    });",
+                    "",
+                    "            Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "            Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "            Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);",
+                    "            Ext.getStore('JsonStoreSiswa').load();",
+                    "        },",
+                    "        failure:function(a, response) {",
+                    "            //console.log(\"gagal\");",
+                    "            Ext.MessageBox.show({",
+                    "                title:\"Gagal\",",
+                    "                msg:response.result.message,",
+                    "                icon:Ext.MessageBox.INFO",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "    }"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnWindowSiswaSimpan",
+            "designerId": "604dacd6-f60d-403a-b17a-dea11dd16260"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcNamaSiswa",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onSrcNamaSiswa",
+                "implHandler": [
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaSiswa')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasSiswa')[0].getValue();",
+                    "",
+                    "if(e.keyCode == e.ENTER) {",
+                    "    Ext.getStore('JsonStoreSiswa').load({",
+                    "        params:{",
+                    "            NamaSiswa_ : namaSiswa,",
+                    "            KelasSiswa_ : kelasSiswa",
+                    "        }",
+                    "    });",
+                    "    console.log(kelasSiswa);",
+                    "",
+                    "    Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "    Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "name": "onSrcNamaSiswa",
+            "designerId": "38af3fc5-89ea-4b6d-bb16-ec7dda5e48cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#srcKelasSiswa",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onSrcKelasSiswa",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#btnCetakSiswa')[0].setVisible(true);",
+                    "",
+                    "var namaSiswa = Ext.ComponentQuery.query('#srcNamaSiswa')[0].getValue();",
+                    "var kelasSiswa = Ext.ComponentQuery.query('#srcKelasSiswa')[0].getValue();",
+                    "",
+                    "Ext.getStore('JsonStoreSiswa').load({",
+                    "    params:{",
+                    "        NamaSiswa_ : namaSiswa,",
+                    "        KelasSiswa_ : kelasSiswa",
+                    "    }",
+                    "});",
+                    "",
+                    "console.log(kelasSiswa);",
+                    "",
+                    "Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onSrcKelasSiswa",
+            "designerId": "6c44ba1f-4cb5-46c5-b074-64e970de1ace"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnRefreshSiswa",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnRefreshSiswa",
+                "implHandler": [
+                    "    var nama = Ext.ComponentQuery.query('#srcNamaSiswa')[0];",
+                    "    var kelas = Ext.ComponentQuery.query('#srcKelasSiswa')[0];",
+                    "",
+                    "    nama.reset();",
+                    "    kelas.reset();",
+                    "    Ext.getStore('JsonStoreSiswa').load();",
+                    "",
+                    "    Ext.ComponentQuery.query('#tabelSiswa')[0].getSelectionModel().clearSelections();",
+                    "    Ext.ComponentQuery.query('#btnEditSiswa')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnHapusSiswa')[0].setDisabled(true);",
+                    "    Ext.ComponentQuery.query('#btnCetakSiswa')[0].setVisible(false);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnRefreshSiswa",
+            "designerId": "84490bd1-d898-4dc4-8339-4877cb37d6fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#btnCetakSiswa",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onBtnCetakSiswa",
+                "implHandler": [
+                    "// window.print();",
+                    "",
+                    "var id = Ext.ComponentQuery.query('#srcKelasSiswa')[0].getValue();",
+                    "",
+                    "console.log(id);",
+                    "",
+                    "window.open('api/siswa/printSiswa.php?idkelas='+id).window.print();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onBtnCetakSiswa",
+            "designerId": "6c9e5bd0-e4bf-455d-a31d-5b3cacbf5818"
+        }
+    ]
+}

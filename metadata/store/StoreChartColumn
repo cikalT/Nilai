@@ -1,0 +1,74 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreChartColumn",
+        "storeId": "StoreChartColumn"
+    },
+    "name": "MyJsonStore",
+    "designerId": "27f0c70c-aa4e-4885-8b2b-64b5f8d11888",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:'api/home/chartColumn.php'",
+                    "}"
+                ]
+            },
+            "name": "MyAjaxProxy6",
+            "designerId": "ca090c7f-9a27-4fad-9c8b-c4a993b1e89c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "f4f705c8-117d-4cec-9c3e-db3f9c7f545f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Jumlah_"
+            },
+            "name": "MyField29",
+            "designerId": "f07e36fa-34e2-4229-a0bb-7aa103fd9605"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Label_"
+            },
+            "name": "MyField30",
+            "designerId": "d3633f64-d408-4d53-b256-07b4e11a184f"
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "window_kelas",
+        "designer|userClassName": "window_kelas",
+        "height": 150,
+        "modal": true,
+        "title": "Window Kelas",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "8cc7955a-293f-41fa-980c-3865693728c6",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|displayName": "formKelas",
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "ebe1847e-4b18-4d30-b65c-4648e329cc07",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "IDKelas_"
+                    },
+                    "name": "MyHiddenField",
+                    "designerId": "54fa9257-bc67-42a6-a054-6b77f3962753"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Nama Kelas",
+                        "layout|anchor": "100%",
+                        "name": "NamaKelas_"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "c2752833-f0d8-4940-8713-f44daddcac41"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "containerWindowKelas",
+                "dock": null,
+                "layout": "hbox",
+                "width": null
+            },
+            "name": "MyContainer5",
+            "designerId": "9f57a805-b9eb-499d-98d5-1999fb0450bc",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowBatal",
+                        "itemId": "btnWindowKelasBatal",
+                        "layout|flex": 0,
+                        "style": [
+                            "{",
+                            "    background: #ff2d55;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Batal"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "4cfb54ed-42c9-4f7d-ad0e-8d3d0e07faac"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "btnWindowSimpan",
+                        "itemId": "btnWindowKelasSimpan",
+                        "layout|flex": null,
+                        "style": [
+                            "{",
+                            "    background: #4cd964;",
+                            "    border: none;",
+                            "}"
+                        ],
+                        "text": "Simpan",
+                        "width": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "1d57ded6-89ef-4bef-af8e-b4bd26326f72"
+                }
+            ]
+        }
+    ]
+}

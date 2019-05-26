@@ -1,0 +1,2335 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "itemId": "mainView",
+        "layout": "border"
+    },
+    "designerId": "353f0c49-9162-4dc5-8e2d-ffb09f0d3a62",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyCls": [
+                    "background"
+                ],
+                "itemId": "menuPanel",
+                "layout|region": "west",
+                "layout|split": true,
+                "title": "",
+                "width": 150
+            },
+            "name": "MyPanel1",
+            "designerId": "70e4bdc2-8c21-4da3-b357-bdac73847e65",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 80,
+                        "margin": "10 0 10 10",
+                        "maxHeight": null,
+                        "maxWidth": null,
+                        "padding": null,
+                        "src": "icon/logokemenperin2.png",
+                        "width": null
+                    },
+                    "name": "MyImg",
+                    "designerId": "a0420818-3885-42d3-a2b7-6dcb6f68d9e2"
+                },
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyCls": [
+                            "background"
+                        ],
+                        "cls": "background-menu",
+                        "floating": false,
+                        "itemId": "menu",
+                        "width": null
+                    },
+                    "name": "MyMenu",
+                    "designerId": "25abbee3-e977-4e92-bc3a-73fcf2aea764",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": null,
+                                "componentCls": null,
+                                "href": null,
+                                "itemId": "home",
+                                "text": "Home"
+                            },
+                            "name": "MyMenuItem",
+                            "designerId": "2d21cd52-2bd4-4f26-99f8-ecb1b8453ece"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "href": null,
+                                "itemId": "nilai",
+                                "text": "Nilai"
+                            },
+                            "name": "MyMenuItem2",
+                            "designerId": "9f67ea74-e63c-4b04-b4c2-4130f7cbd1f8"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "href": null,
+                                "itemId": "siswa",
+                                "text": "Siswa"
+                            },
+                            "name": "MyMenuItem1",
+                            "designerId": "a9c5c2c5-e485-4719-a39d-1f3df3d72393"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "kelasjur",
+                                "text": "Kelas & Jurusan"
+                            },
+                            "name": "MyMenuItem3",
+                            "designerId": "60c4fa13-83db-405f-8199-0e63a41688dc"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMenuClick",
+                                "implHandler": [
+                                    "location.hash = item.itemId;"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onMenuClick",
+                            "designerId": "6aabf84c-692c-4a9f-9b11-0d46214a63b5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "contentPanel",
+                "layout": "card",
+                "layout|region": "center",
+                "title": null
+            },
+            "name": "MyPanel2",
+            "designerId": "c98c4f91-6f66-4054-8e31-2ccc2ab4f975",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyCls": [
+                            "background"
+                        ],
+                        "itemId": "homePanel",
+                        "title": null,
+                        "width": null
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "6e0310e2-3829-40e2-acea-c3d80afea341",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "title-page",
+                                "container|align": "middle",
+                                "designer|displayName": "containerTitle",
+                                "height": 90,
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer12",
+                            "designerId": "a782b724-5d26-43d4-b831-b4e06e020cd4",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "title-text",
+                                        "layout|margins": "0, 0, 0, 10",
+                                        "text": "HOME"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "35716821-9397-49af-bb9e-b5f1466e890b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "containerData",
+                                "height": "38%",
+                                "layout": "hbox",
+                                "margin": "50, 0, 0, 20",
+                                "width": "95%"
+                            },
+                            "name": "MyContainer9",
+                            "designerId": "01b22fb8-1568-41b7-aab0-65930e6c0ebd",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": null,
+                                        "container|align": "middle",
+                                        "container|pack": "center",
+                                        "designer|displayName": "childContainerValue",
+                                        "height": 300,
+                                        "layout": "hbox",
+                                        "layout|flex": 0,
+                                        "maxHeight": null,
+                                        "width": "50%"
+                                    },
+                                    "name": "MyContainer10",
+                                    "designerId": "def517f3-4523-4b0d-bd45-54ec0f2548ff",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "center",
+                                                "container|pack": "center",
+                                                "designer|displayName": "child1",
+                                                "height": "100%",
+                                                "layout": "vbox",
+                                                "layout|flex": 1,
+                                                "width": "50%"
+                                            },
+                                            "name": "MyContainer17",
+                                            "designerId": "283d8aef-16fb-406a-ba92-63a70af5f2d7",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "center",
+                                                        "designer|displayName": "chilkdContainerValueKelas",
+                                                        "height": "50%",
+                                                        "layout": "vbox",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "5, 5, 5, 5",
+                                                        "style": [
+                                                            "{",
+                                                            "background: #5ac8fa;",
+                                                            "}"
+                                                        ],
+                                                        "width": "100%"
+                                                    },
+                                                    "name": "MyContainer23",
+                                                    "designerId": "7e714622-a359-4879-b021-8816a5d9960d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard",
+                                                                "componentCls": null,
+                                                                "height": null,
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": 30,
+                                                                "text": "KELAS"
+                                                            },
+                                                            "name": "MyLabel",
+                                                            "designerId": "ec882069-7af8-4d57-b481-4d218b1de97c"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard-value",
+                                                                "componentCls": "font-dashboard-value",
+                                                                "height": null,
+                                                                "itemId": "txtValueKelas",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": null,
+                                                                "text": "0"
+                                                            },
+                                                            "name": "MyLabel5",
+                                                            "designerId": "7458d764-692d-4d9e-885f-881a34192db3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "center",
+                                                        "designer|displayName": "chilkdContainerValueMapel",
+                                                        "height": "50%",
+                                                        "layout": "vbox",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "5, 5, 5, 5",
+                                                        "style": [
+                                                            "{",
+                                                            "background: #ff2d55;",
+                                                            "}"
+                                                        ],
+                                                        "width": "100%"
+                                                    },
+                                                    "name": "MyContainer27",
+                                                    "designerId": "a88d957a-9ce9-47db-87b9-6443f281183d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard",
+                                                                "componentCls": "font-dashboard",
+                                                                "height": null,
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": 30,
+                                                                "text": "MATA PELAJARAN"
+                                                            },
+                                                            "name": "MyLabel2",
+                                                            "designerId": "caf3dade-e711-471d-96f0-d60c76308d0b"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard-value",
+                                                                "componentCls": "font-dashboard-value",
+                                                                "height": null,
+                                                                "itemId": "txtValueMapel",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": null,
+                                                                "text": "0"
+                                                            },
+                                                            "name": "MyLabel6",
+                                                            "designerId": "483dcf97-2361-4943-9cd2-5395e66dad2e"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "center",
+                                                "container|pack": "center",
+                                                "designer|displayName": "child2",
+                                                "height": "100%",
+                                                "layout": "vbox",
+                                                "layout|flex": 1,
+                                                "width": "50%"
+                                            },
+                                            "name": "MyContainer25",
+                                            "designerId": "9148f622-69c7-4fa3-8652-7db2f6f3934d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "center",
+                                                        "designer|displayName": "chilkdContainerValueJur",
+                                                        "height": "50%",
+                                                        "layout": "vbox",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "5, 5, 5, 5",
+                                                        "style": [
+                                                            "{",
+                                                            "background: #ffcc00;",
+                                                            "}"
+                                                        ],
+                                                        "width": "100%"
+                                                    },
+                                                    "name": "MyContainer28",
+                                                    "designerId": "4ba3747a-e43f-48db-b122-f458501546cd",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard",
+                                                                "componentCls": "font-dashboard",
+                                                                "height": null,
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": 30,
+                                                                "text": "JURUSAN"
+                                                            },
+                                                            "name": "MyLabel3",
+                                                            "designerId": "445267c0-d8c2-45eb-884e-7a272545b1cf"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard-value",
+                                                                "componentCls": "font-dashboard-value",
+                                                                "height": null,
+                                                                "itemId": "txtValueJurusan",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": null,
+                                                                "text": "0"
+                                                            },
+                                                            "name": "MyLabel7",
+                                                            "designerId": "a34739a4-71a4-40c0-9c21-fff2b71a7a19"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "center",
+                                                        "designer|displayName": "chilkdContainerValueSiswa",
+                                                        "height": "50%",
+                                                        "layout": "vbox",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "5, 5, 5, 5",
+                                                        "style": [
+                                                            "{",
+                                                            "background: #4cd964;",
+                                                            "}"
+                                                        ],
+                                                        "width": "100%"
+                                                    },
+                                                    "name": "MyContainer29",
+                                                    "designerId": "8f2374d1-d4f5-4d7e-b233-7d30e5cd2e1d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard",
+                                                                "componentCls": "font-dashboard",
+                                                                "height": null,
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": 30,
+                                                                "text": "SISWA"
+                                                            },
+                                                            "name": "MyLabel4",
+                                                            "designerId": "705f51e0-1ae5-4785-9066-aa0381979e44"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "font-dashboard-value",
+                                                                "componentCls": "font-dashboard-value",
+                                                                "height": null,
+                                                                "itemId": "txtValueSiswa",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 0, 0, 0",
+                                                                "maxHeight": null,
+                                                                "text": "0"
+                                                            },
+                                                            "name": "MyLabel8",
+                                                            "designerId": "b971a423-54a8-4497-8b7c-53edeffc92e3"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": null,
+                                        "container|pack": "center",
+                                        "designer|displayName": "childContainerChart",
+                                        "height": 300,
+                                        "layout": "hbox",
+                                        "layout|flex": 0,
+                                        "maxHeight": null,
+                                        "width": "50%"
+                                    },
+                                    "name": "MyContainer30",
+                                    "designerId": "c9908200-99ac-43f9-8044-4e0552255ade",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "center",
+                                                "container|pack": "center",
+                                                "designer|displayName": "child1",
+                                                "height": "100%",
+                                                "layout": "vbox",
+                                                "layout|flex": 0,
+                                                "width": "50%"
+                                            },
+                                            "name": "MyContainer4",
+                                            "designerId": "7d5e4ff4-78b1-4db0-a97a-27a16d249dc6",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.chart.Chart",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "animate": [
+                                                            "true"
+                                                        ],
+                                                        "cls": null,
+                                                        "height": 300,
+                                                        "hidden": true,
+                                                        "hideMode": "offsets",
+                                                        "insetPadding": 20,
+                                                        "layout|margins": "5, 5, 5, 5",
+                                                        "store": "StoreChartPie",
+                                                        "theme": "Category1",
+                                                        "width": 300
+                                                    },
+                                                    "name": "PieChart",
+                                                    "designerId": "ebee231e-7beb-4e0e-8c1b-d8f37f86c34f",
+                                                    "isBuiltIn": true,
+                                                    "iconCls": "icon-pie-chart",
+                                                    "autoName": "PieChart",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.chart.series.Pie",
+                                                            "reference": {
+                                                                "name": "series",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "angleField": "Jumlah_",
+                                                                "designer|displayName": "chartPieHome",
+                                                                "label": [
+                                                                    "{'field':'Label_',",
+                                                                    "renderer: function(value, label, storeItem) {",
+                                                                    "return '';",
+                                                                    "},'display':'rotate','contrast':true,'font':'12px Arial'}"
+                                                                ],
+                                                                "lengthField": null,
+                                                                "showInLegend": true
+                                                            },
+                                                            "name": "MyPieSeries3",
+                                                            "designerId": "70d5de0c-ce47-424e-b72f-736ef34f6171"
+                                                        },
+                                                        {
+                                                            "type": "Ext.chart.Legend",
+                                                            "reference": {
+                                                                "name": "legend",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "boxStrokeWidth": null,
+                                                                "position": "left"
+                                                            },
+                                                            "name": "MyLegend",
+                                                            "designerId": "45654aeb-f8a5-459d-a4a4-6f091c02bcc5"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.chart.Chart",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "animate": [
+                                                            "true"
+                                                        ],
+                                                        "height": 300,
+                                                        "insetPadding": 20,
+                                                        "shadow": true,
+                                                        "store": "StoreChartPie",
+                                                        "theme": "Category3",
+                                                        "width": 300
+                                                    },
+                                                    "name": "StackedBarChart",
+                                                    "designerId": "fb24c0d2-7461-42ec-98de-39ce37a27fc1",
+                                                    "isBuiltIn": true,
+                                                    "iconCls": "icon-bar-chart",
+                                                    "autoName": "StackedBarChart",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.chart.axis.Category",
+                                                            "reference": {
+                                                                "name": "axes",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fields": [
+                                                                    "Label_"
+                                                                ],
+                                                                "position": "left",
+                                                                "title": null
+                                                            },
+                                                            "name": "MyCategoryAxis1",
+                                                            "designerId": "e5a189fb-23c0-4411-8cc7-a3aed6f8c7a3"
+                                                        },
+                                                        {
+                                                            "type": "Ext.chart.axis.Numeric",
+                                                            "reference": {
+                                                                "name": "axes",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fields": [
+                                                                    "Jumlah_"
+                                                                ],
+                                                                "position": "bottom",
+                                                                "title": null
+                                                            },
+                                                            "name": "MyNumericAxis1",
+                                                            "designerId": "97417bfa-31db-4fa8-9310-2e89b36331cd"
+                                                        },
+                                                        {
+                                                            "type": "Ext.chart.series.Bar",
+                                                            "reference": {
+                                                                "name": "series",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "axis": [
+                                                                    "bottom"
+                                                                ],
+                                                                "stacked": true,
+                                                                "xField": "Jumlah_",
+                                                                "yField": [
+                                                                    "Jumlah_"
+                                                                ]
+                                                            },
+                                                            "name": "MyBarSeries",
+                                                            "designerId": "179ceeac-50c5-45bd-a921-f2ed905fc474"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "middle",
+                                                "container|pack": "center",
+                                                "designer|displayName": "child2",
+                                                "height": "100%",
+                                                "layout": "hbox",
+                                                "layout|flex": 1,
+                                                "width": "50%"
+                                            },
+                                            "name": "MyContainer5",
+                                            "designerId": "114fcc7a-d513-4f93-9713-ff9cf19dd233",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "stretch",
+                                                        "container|pack": "center",
+                                                        "designer|displayName": "containerButton",
+                                                        "layout": "vbox",
+                                                        "layout|flex": 1,
+                                                        "margin": null,
+                                                        "maxHeight": null,
+                                                        "maxWidth": 90,
+                                                        "width": null
+                                                    },
+                                                    "name": "MyContainer8",
+                                                    "designerId": "8904a855-d8aa-4447-9fd6-b1350a49e356",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "btnRefresh",
+                                                                "itemId": "btnRefreshMapel",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 10, 10, 10",
+                                                                "maxHeight": 30,
+                                                                "maxWidth": 100,
+                                                                "text": "Refresh",
+                                                                "width": null
+                                                            },
+                                                            "name": "MyButton12",
+                                                            "designerId": "7ce6faa1-6f78-4169-b92c-3287ff83a4cf"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "btnTambah",
+                                                                "itemId": "btnTambahMapel",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 10, 10, 10",
+                                                                "maxHeight": 30,
+                                                                "maxWidth": 100,
+                                                                "text": "Tambah",
+                                                                "width": null
+                                                            },
+                                                            "name": "MyButton3",
+                                                            "designerId": "858be6fb-e832-400f-8f82-7de4fb4e3a22"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "btnEdit",
+                                                                "disabled": true,
+                                                                "itemId": "btnEditMapel",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 10, 10, 10",
+                                                                "maxHeight": 30,
+                                                                "maxWidth": 100,
+                                                                "text": "Edit",
+                                                                "width": null
+                                                            },
+                                                            "name": "MyButton7",
+                                                            "designerId": "a680abfa-f1fc-498f-b7e0-4d1660376989"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "cls": "btnHapus",
+                                                                "disabled": true,
+                                                                "itemId": "btnHapusMapel",
+                                                                "layout|flex": 1,
+                                                                "layout|margins": "10, 10, 10, 10",
+                                                                "maxHeight": 30,
+                                                                "maxWidth": 100,
+                                                                "text": "Hapus",
+                                                                "width": null
+                                                            },
+                                                            "name": "MyButton8",
+                                                            "designerId": "3d2a3e1f-8889-4a83-ad96-3a689f42cd8a"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoScroll": true,
+                                                        "height": "100%",
+                                                        "itemId": "tabelMapel",
+                                                        "layout|flex": 1,
+                                                        "margin": "5, 5, 5, 5",
+                                                        "scroll": "vertical",
+                                                        "scrollDelta": null,
+                                                        "store": "JsonStoreMapel",
+                                                        "title": "",
+                                                        "width": null
+                                                    },
+                                                    "name": "MyGridPanel3",
+                                                    "designerId": "2e5389cc-8a93-401e-8f0d-b3e46889b201",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.column.Column",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "NamaMapel_",
+                                                                "text": "Mata pelajaran",
+                                                                "width": "75%"
+                                                            },
+                                                            "name": "MyColumn18",
+                                                            "designerId": "30de4387-fb25-44bb-9efe-d9d0c0257a0f"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.column.Column",
+                                                            "reference": {
+                                                                "name": "columns",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "dataIndex": "Kkm_",
+                                                                "text": "KKM",
+                                                                "width": "25%"
+                                                            },
+                                                            "name": "MyColumn19",
+                                                            "designerId": "92ef52e5-32bc-4f12-bd28-997f238a9cdf"
+                                                        },
+                                                        {
+                                                            "type": "Ext.grid.View",
+                                                            "reference": {
+                                                                "name": "viewConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "GridViewMapel"
+                                                            },
+                                                            "name": "MyGridView2",
+                                                            "designerId": "3f539268-237d-48ac-9b6b-e746da0b215c"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "containerData",
+                                "height": "40%",
+                                "layout": "hbox",
+                                "margin": "30, 0, 0, 20",
+                                "width": "95%"
+                            },
+                            "name": "MyContainer11",
+                            "designerId": "ca7892cd-dada-496e-9c17-593a2c4c0f5c",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.Chart",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "animate": [
+                                            "true"
+                                        ],
+                                        "height": 250,
+                                        "insetPadding": 20,
+                                        "shadow": true,
+                                        "store": "StoreChartColumn",
+                                        "theme": "Category6",
+                                        "width": "100%"
+                                    },
+                                    "name": "ColumnChart",
+                                    "designerId": "8cc1abfd-2cb8-417c-8950-3c62f873de4d",
+                                    "isBuiltIn": true,
+                                    "iconCls": "icon-column-chart",
+                                    "autoName": "ColumnChart",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.chart.axis.Category",
+                                            "reference": {
+                                                "name": "axes",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fields": [
+                                                    "Label_"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyCategoryAxis",
+                                            "designerId": "27d7957c-89b3-4fe9-b935-8a7628e3058c"
+                                        },
+                                        {
+                                            "type": "Ext.chart.axis.Numeric",
+                                            "reference": {
+                                                "name": "axes",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fields": [
+                                                    "Jumlah_"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyNumericAxis",
+                                            "designerId": "83491a04-1216-474f-a066-09ffbd8b2cbf"
+                                        },
+                                        {
+                                            "type": "Ext.chart.series.Column",
+                                            "reference": {
+                                                "name": "series",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "label": [
+                                                    "{'display':'insideEnd','field':'','color':'#333','text-anchor':'middle'}"
+                                                ],
+                                                "xField": "Jumlah_",
+                                                "yField": [
+                                                    "Jumlah_"
+                                                ]
+                                            },
+                                            "name": "MyColumnSeries",
+                                            "designerId": "cce5794f-0267-4730-b20c-67ab498fcf1e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "bodyCls": [
+                            "background"
+                        ],
+                        "itemId": "nilaiPanel",
+                        "title": ""
+                    },
+                    "name": "MyPanel5",
+                    "designerId": "bdce8a33-1e17-42fa-bdbd-f2e50d0d22da",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "title-page",
+                                "container|align": "middle",
+                                "designer|displayName": "containerTitle",
+                                "height": 90,
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer15",
+                            "designerId": "24634439-a18d-4a17-ac1b-2688485eb6f5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "title-text",
+                                        "layout|margins": "0, 0, 0, 10",
+                                        "text": "NILAI"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "f507553b-9ad8-4eb6-941e-f99b12a72917"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "containerButton",
+                                "dock": null,
+                                "layout": "hbox",
+                                "margin": "20, 0, 0, 0",
+                                "width": null
+                            },
+                            "name": "MyContainer6",
+                            "designerId": "c31269d2-adfd-4e55-99aa-bb42162f1735",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnTambah",
+                                        "itemId": "btnTambahNilai",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Tambah",
+                                        "width": null
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "aed8f307-99ca-4f48-aa9f-8d2d07e14b6b"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnEdit",
+                                        "disabled": true,
+                                        "itemId": "btnEditNilai",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Edit",
+                                        "width": null
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "edd59c1b-9842-49b1-866e-e60c093b49d3"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnHapus",
+                                        "disabled": true,
+                                        "itemId": "btnHapusNilai",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Hapus",
+                                        "width": null
+                                    },
+                                    "name": "MyButton8",
+                                    "designerId": "c0942152-f660-44cb-b18a-6874564a55cb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "designer|displayName": "containerFilter",
+                                "layout": "hbox",
+                                "margin": "20, 0, 0, 0"
+                            },
+                            "name": "MyContainer7",
+                            "designerId": "23e1d58d-c3b8-4e87-b551-15dd803b8b26",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnRefresh",
+                                        "itemId": "btnRefreshNilai",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "minWidth": 100,
+                                        "text": "Refresh"
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "a08f6e4d-a101-4aae-bbf8-9a9a512bdca4"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Nama",
+                                        "itemId": "srcNamaNilai",
+                                        "labelWidth": 45,
+                                        "layout|margins": "10, 10, 10, 10"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "0c184434-9e05-49b2-af2c-36fe35af79a6"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "NamaKelas_",
+                                        "editable": false,
+                                        "emptyText": "Pilih Kelas",
+                                        "fieldLabel": "Kelas",
+                                        "itemId": "srcKelasNilai",
+                                        "labelWidth": 40,
+                                        "layout|margins": "10, 10, 10, 0",
+                                        "store": "JsonStoreKelas",
+                                        "valueField": "IDKelas_"
+                                    },
+                                    "name": "MyComboBox1",
+                                    "designerId": "56cdf0b2-c102-4779-a756-a58854320470"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "NamaMapel_",
+                                        "editable": false,
+                                        "emptyText": "Pilih Mata Pelajaran",
+                                        "fieldLabel": "Mata Pelajaran",
+                                        "itemId": "srcMapelNilai",
+                                        "labelWidth": 110,
+                                        "layout|margins": "10, 10, 10, 0",
+                                        "store": "JsonStoreMapel",
+                                        "valueField": "IDMapel_"
+                                    },
+                                    "name": "MyComboBox3",
+                                    "designerId": "f8b17bfb-1b91-4c23-96cb-d90a3c54c17a"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "Semester_",
+                                        "editable": false,
+                                        "emptyText": "-",
+                                        "fieldLabel": "Semester",
+                                        "itemId": "srcSemesterNilai",
+                                        "labelWidth": 70,
+                                        "layout|flex": 0,
+                                        "layout|margins": "10, 10, 10, 0",
+                                        "maxWidth": 120,
+                                        "queryMode": "local",
+                                        "store": "JsonStoreSemester",
+                                        "valueField": "Semester_"
+                                    },
+                                    "name": "MyComboBox4",
+                                    "designerId": "4244a98f-831c-45ec-9dfc-562f1ff460a9"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnCetak",
+                                        "itemId": "btnCetakNilai",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "minWidth": 100,
+                                        "text": "Cetak"
+                                    },
+                                    "name": "MyButton5",
+                                    "designerId": "015f4ac5-101a-4903-a1ea-e29adc91537a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "tabelNilai",
+                                "maxHeight": null,
+                                "store": "JsonStoreNilai",
+                                "title": "Data Nilai"
+                            },
+                            "name": "MyGridPanel2",
+                            "designerId": "76a8218f-afed-4828-8f4b-0eb60a08efa8",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NoNilai_",
+                                        "designer|displayName": "NoNilai",
+                                        "text": "No",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn3",
+                                    "designerId": "e5881819-2579-4055-ab20-0eea7e3bc44d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Nis_",
+                                        "designer|displayName": "NisSiswa",
+                                        "text": "Nis",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn12",
+                                    "designerId": "7925b8c2-6835-4eea-aebc-12f92817da88"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaSiswa_",
+                                        "designer|displayName": "NamaSiswa",
+                                        "text": "Nama",
+                                        "width": "25%"
+                                    },
+                                    "name": "MyColumn17",
+                                    "designerId": "7e1a61c6-2ea5-4399-ba4e-3bd13e136e20"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaKelas_",
+                                        "designer|displayName": "KelasSiswa",
+                                        "text": "Kelas",
+                                        "width": "10%"
+                                    },
+                                    "name": "MyColumn11",
+                                    "designerId": "ddfdb1ca-1a5f-4e2d-8383-46caa3a28e94"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaMapel_",
+                                        "designer|displayName": "NamaMapel",
+                                        "text": "Mata Pelajaran",
+                                        "width": "15%"
+                                    },
+                                    "name": "MyColumn13",
+                                    "designerId": "e199b14f-36b2-46e3-9bae-9568d7ccb00e"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Semester_",
+                                        "designer|displayName": "SemesterNilai",
+                                        "text": "Semester",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn15",
+                                    "designerId": "9111271a-a87e-40f1-8303-39fba9ef0ed4"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Tugas1_",
+                                        "designer|displayName": "Tugas1",
+                                        "text": "Tugas 1",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn14",
+                                    "designerId": "96cdbad4-4928-4d88-a6f9-5dad01c6e433"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Tugas2_",
+                                        "designer|displayName": "Tugas2",
+                                        "text": "Tugas 2",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn2",
+                                    "designerId": "ac94422a-5bb7-4737-9b2f-6beb856a8f49"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Tugas3_",
+                                        "designer|displayName": "Tugas3",
+                                        "text": "Tugas 3",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn10",
+                                    "designerId": "cc9e8667-2b0b-48df-a838-039d8421fca7"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Uts_",
+                                        "designer|displayName": "Uts",
+                                        "text": "UTS",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn9",
+                                    "designerId": "c47f528b-0a26-4834-b10d-3c7ca6644cac"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Uas_",
+                                        "designer|displayName": "Uas",
+                                        "text": "UAS",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn16",
+                                    "designerId": "3284a256-f9d4-4938-8cab-910e071dfcd0"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Tgl_",
+                                        "designer|displayName": "Tanggal",
+                                        "text": "Tanggal",
+                                        "width": "10%"
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "30733249-558e-4f56-9372-caa32fe8ea47"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "GridViewNilai",
+                                        "maxHeight": null
+                                    },
+                                    "name": "MyGridView1",
+                                    "designerId": "4000db9a-e77d-42ae-8f50-59c3c9fdd343"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "itemId": "PagingToolbarNilai",
+                                        "store": "JsonStoreNilai",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar1",
+                                    "designerId": "208671ef-58d0-469d-8390-7efcc905288c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyCls": [
+                            "background"
+                        ],
+                        "dock": null,
+                        "itemId": "siswaPanel",
+                        "title": ""
+                    },
+                    "name": "MyPanel4",
+                    "designerId": "daf95a82-9e4f-4afd-b806-c2cc1b902fad",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "title-page",
+                                "container|align": "middle",
+                                "designer|displayName": "containerTitle",
+                                "height": 90,
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer16",
+                            "designerId": "13b69943-4ae9-44d8-87b5-4c537565dfc5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "title-text",
+                                        "layout|margins": "0, 0, 0, 10",
+                                        "text": "SISWA"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "39e7135e-d2aa-4f2a-b0ec-4c2b476e6182"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "designer|displayName": "containerButton",
+                                "dock": null,
+                                "layout": "hbox",
+                                "margin": "20, 0, 0, 0",
+                                "width": null
+                            },
+                            "name": "MyContainer1",
+                            "designerId": "ff4bda78-5ae0-48b4-ab14-2e6f94ecf2d3",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnTambah",
+                                        "itemId": "btnTambahSiswa",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Tambah",
+                                        "width": null
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "286df255-b5b6-407a-9eb1-c7f8701dd6e0"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnEdit",
+                                        "disabled": true,
+                                        "itemId": "btnEditSiswa",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Edit",
+                                        "width": null
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "bd9af9c4-73c2-463d-8794-8b3200cb1edd"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnHapus",
+                                        "disabled": true,
+                                        "itemId": "btnHapusSiswa",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "text": "Hapus",
+                                        "width": null
+                                    },
+                                    "name": "MyButton8",
+                                    "designerId": "b989d191-0a63-45bb-9ab6-77e8318ed25f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "designer|displayName": "containerFilter",
+                                "layout": "hbox",
+                                "margin": "20, 0, 0, 0"
+                            },
+                            "name": "MyContainer3",
+                            "designerId": "f115c008-4b1c-4852-9592-76afc71b47fa",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnRefresh",
+                                        "itemId": "btnRefreshSiswa",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 100,
+                                        "minWidth": 100,
+                                        "text": "Refresh"
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "3032daf3-7d31-4281-bc86-23adfc9c0693"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Nama",
+                                        "itemId": "srcNamaSiswa",
+                                        "labelWidth": 45,
+                                        "layout|margins": "10, 10, 10, 10"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "d9b7e01d-ca9c-4f83-843c-d8b7f2bc76b4"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "NamaKelas_",
+                                        "editable": false,
+                                        "emptyText": "Pilih Kelas",
+                                        "fieldLabel": "Kelas",
+                                        "itemId": "srcKelasSiswa",
+                                        "labelWidth": 40,
+                                        "layout|margins": "10, 10, 10, 0",
+                                        "store": "JsonStoreKelas",
+                                        "valueField": "IDKelas_"
+                                    },
+                                    "name": "MyComboBox1",
+                                    "designerId": "205d821d-f764-48e6-ac21-75178082acc4"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "btnCetak",
+                                        "itemId": "btnCetakSiswa",
+                                        "layout|flex": 1,
+                                        "layout|margins": "10, 10, 10, 10",
+                                        "maxWidth": 130,
+                                        "minWidth": 100,
+                                        "text": "Cetak Daftar Siswa",
+                                        "width": 100
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "85f6aa56-91a9-4a6b-a988-4bf11fb46a28"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "tabelSiswa",
+                                "store": "JsonStoreSiswa",
+                                "title": "Data Siswa"
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "ec00e432-711e-45fd-ab14-82140564da1d",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NoSiswa_",
+                                        "designer|displayName": "NoSiswa",
+                                        "text": "No",
+                                        "width": "5%"
+                                    },
+                                    "name": "MyColumn3",
+                                    "designerId": "d4031476-ce59-42d1-8018-725d39c61b3d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Nis_",
+                                        "designer|displayName": "NisSiswa",
+                                        "text": "Nis",
+                                        "width": "10%"
+                                    },
+                                    "name": "MyColumn4",
+                                    "designerId": "57224c93-daf2-40b5-98d3-40c4660461bc"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaSiswa_",
+                                        "designer|displayName": "NamaSiswa",
+                                        "text": "Nama",
+                                        "width": "25%"
+                                    },
+                                    "name": "MyColumn5",
+                                    "designerId": "47ba6854-7ca0-482c-90fc-03489e4ad832"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaKelas_",
+                                        "designer|displayName": "KelasSiswa",
+                                        "text": "Kelas",
+                                        "width": "10%"
+                                    },
+                                    "name": "MyColumn7",
+                                    "designerId": "cc15300a-d0df-445d-afc6-0e31ca3d406d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "NamaJur_",
+                                        "designer|displayName": "JurusanSiswa",
+                                        "text": "Jurusan",
+                                        "width": "20%"
+                                    },
+                                    "name": "MyColumn8",
+                                    "designerId": "3290c248-8f53-4b76-9f0a-cdf18fa56f55"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Alamat_",
+                                        "designer|displayName": "AlamatSiswa",
+                                        "text": "Alamat",
+                                        "width": "30%"
+                                    },
+                                    "name": "MyColumn6",
+                                    "designerId": "d053873a-5140-43d2-9d67-3ef985b88012"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "GridViewSiswa"
+                                    },
+                                    "name": "MyGridView1",
+                                    "designerId": "358e7364-e23f-4e61-ad26-7113e5e6687d"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "itemId": "PagingToolbarSiswa",
+                                        "store": "JsonStoreSiswa",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar",
+                                    "designerId": "8c20ed82-f1e9-4891-b52c-049842bc3343"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyCls": [
+                            "background"
+                        ],
+                        "height": null,
+                        "itemId": "kelasjurPanel",
+                        "title": "",
+                        "width": null
+                    },
+                    "name": "MyPanel",
+                    "designerId": "aa7a12a9-fbf0-4b97-bb29-fbe973ce239d",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "title-page",
+                                "container|align": "middle",
+                                "designer|displayName": "containerTitle",
+                                "height": 90,
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer18",
+                            "designerId": "e84ea9d7-1e22-421f-92d8-d5fa8efb37f1",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": "title-text",
+                                        "layout|margins": "0, 0, 0, 10",
+                                        "text": "Kelas dan Jurusan"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "d1ac1905-dfe5-44f6-9469-34b100650432"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "layout": "hbox",
+                                "width": "100%"
+                            },
+                            "name": "MyContainer19",
+                            "designerId": "630674a8-000e-46f7-885a-83f33ccf0f32",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "center",
+                                        "designer|displayName": "containerKelas",
+                                        "height": null,
+                                        "layout": "vbox",
+                                        "layout|flex": 1,
+                                        "layout|margins": "0, 10, 0, 0",
+                                        "maxHeight": null,
+                                        "width": "50%"
+                                    },
+                                    "name": "MyContainer",
+                                    "designerId": "f2e9759f-0336-4fea-a98a-1e41986810f9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "middle",
+                                                "container|pack": "center",
+                                                "designer|displayName": "childContainerButton",
+                                                "layout": "hbox",
+                                                "layout|flex": 1,
+                                                "maxHeight": 50,
+                                                "maxWidth": null,
+                                                "width": 300
+                                            },
+                                            "name": "MyContainer2",
+                                            "designerId": "c88d2c22-13aa-41d1-98ee-b41983f1997f",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnTambah",
+                                                        "itemId": "btnTambahKelas",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Tambah"
+                                                    },
+                                                    "name": "MyButton",
+                                                    "designerId": "504219c7-15fb-439f-9b1f-12e1a4a8aa04"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnEdit",
+                                                        "disabled": true,
+                                                        "itemId": "btnEditKelas",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Edit"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "668c4a1d-0e3c-4b3e-902b-4b89f48a5a62"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnHapus",
+                                                        "disabled": true,
+                                                        "itemId": "btnHapusKelas",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Hapus"
+                                                    },
+                                                    "name": "MyButton2",
+                                                    "designerId": "07f2cea0-9d71-4235-87e6-ee4c92417d6a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "tabelKelas",
+                                                "layout|flex": 1,
+                                                "store": "JsonStoreKelas",
+                                                "title": "Data Kelas",
+                                                "width": "100%"
+                                            },
+                                            "name": "MyGridPanel",
+                                            "designerId": "fce38043-9e31-4f4f-91d1-ac20b15a4344",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "NoKelas_",
+                                                        "designer|displayName": "NoKelas",
+                                                        "text": "No",
+                                                        "width": "10%"
+                                                    },
+                                                    "name": "MyColumn",
+                                                    "designerId": "510c0820-05d3-436c-bb7c-290bf5f9bb9b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "NamaKelas_",
+                                                        "designer|displayName": "NamaKelas",
+                                                        "text": "Nama Kelas",
+                                                        "width": "90%"
+                                                    },
+                                                    "name": "MyColumn1",
+                                                    "designerId": "be8f805d-4e67-443d-92a8-7bcb2ae2f5c1"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "itemId": "GridViewKelas",
+                                                        "width": null
+                                                    },
+                                                    "name": "MyGridView",
+                                                    "designerId": "7832850f-7b0e-4490-a6f7-0a2611c96b50"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "center",
+                                        "designer|displayName": "containerJurusan",
+                                        "height": null,
+                                        "layout": "vbox",
+                                        "layout|flex": 1,
+                                        "layout|margins": null,
+                                        "maxHeight": null,
+                                        "width": "50%"
+                                    },
+                                    "name": "MyContainer21",
+                                    "designerId": "d1c6c00a-6a00-481f-8dfe-b64949e31487",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "middle",
+                                                "container|pack": "center",
+                                                "designer|displayName": "childContainerButton",
+                                                "layout": "hbox",
+                                                "layout|flex": 1,
+                                                "maxHeight": 50,
+                                                "maxWidth": null,
+                                                "width": 300
+                                            },
+                                            "name": "MyContainer2",
+                                            "designerId": "a1c6f989-3c2f-4c2f-98ee-1fcb0a46e25b",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnTambah",
+                                                        "itemId": "btnTambahJurusan",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Tambah"
+                                                    },
+                                                    "name": "MyButton",
+                                                    "designerId": "b58034e6-5996-4166-ba8d-0fee1f02c587"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnEdit",
+                                                        "disabled": true,
+                                                        "itemId": "btnEditJurusan",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Edit"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "77b764b5-1525-4cdc-bb47-d1dd22e9a47d"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": "btnHapus",
+                                                        "disabled": true,
+                                                        "itemId": "btnHapusJurusan",
+                                                        "layout|flex": 1,
+                                                        "layout|margins": "10, 10, 10, 10",
+                                                        "text": "Hapus"
+                                                    },
+                                                    "name": "MyButton2",
+                                                    "designerId": "8f43370b-63a7-4d87-94e2-907347e8612f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "tabelJurusan",
+                                                "layout|flex": 1,
+                                                "store": "JsonStoreJurusan",
+                                                "title": "Data Jurusan",
+                                                "width": "100%"
+                                            },
+                                            "name": "MyGridPanel",
+                                            "designerId": "b7aae516-d1f1-4ccc-8eec-268cd1ec4fd8",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "NoJur_",
+                                                        "designer|displayName": "NoJurusan",
+                                                        "text": "No",
+                                                        "width": "10%"
+                                                    },
+                                                    "name": "MyColumn",
+                                                    "designerId": "d992fb5b-8092-4d07-a053-3b7afc7ffc18"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "NamaJur_",
+                                                        "designer|displayName": "NamaJurusan",
+                                                        "text": "Nama Jurusan",
+                                                        "width": "90%"
+                                                    },
+                                                    "name": "MyColumn1",
+                                                    "designerId": "4c3c5db7-0a58-4e3b-909a-b1c369fe9b5b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "itemId": "GridViewJurusan",
+                                                        "width": null
+                                                    },
+                                                    "name": "MyGridView",
+                                                    "designerId": "faec292c-5f41-4963-b664-c69d507f86bc"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
