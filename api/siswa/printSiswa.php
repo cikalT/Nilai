@@ -1,3 +1,4 @@
+<!-- layout untuk print laporan -->
 <?php
 
 require_once "../koneksi.php";

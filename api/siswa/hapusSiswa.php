@@ -1,5 +1,5 @@
 <?php
-
+// delete data siswa
 require_once "../koneksi.php";
 
 $id = $_POST['IDSiswa_'];

@@ -1,5 +1,5 @@
 <?php
-
+// create new data siswa
 require_once "../koneksi.php";
 
 $nis = $_POST['Nis_'];
