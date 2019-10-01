@@ -1,5 +1,5 @@
 <?php
-
+// show list data siswa
 require_once "../koneksi.php";
 
 $cond = "";

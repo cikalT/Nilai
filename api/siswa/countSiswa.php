@@ -1,5 +1,5 @@
 <?php
-
+// to paginate page siswa
 require_once "../koneksi.php";
 
 $cond = "";
